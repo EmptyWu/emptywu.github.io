@@ -1,58 +1,346 @@
-extends base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>otohits.net 流量交換工具 | Empty&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="免費增加流量，流量交換工具(otohits.net) 註冊及操作使用教學~20191227更新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="otohits.net 流量交換工具">
+<meta property="og:url" content="https://blog.heitang.info/2019/12/27/2029-12-27-otohits/index.html">
+<meta property="og:site_name" content="Empty&#39;s Blog">
+<meta property="og:description" content="免費增加流量，流量交換工具(otohits.net) 註冊及操作使用教學~20191227更新">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://www.otohits.net/content/img/otohits_en.gif">
+<meta property="og:image" content="https://www.otohits.net/content/img/otohits_en.gif">
+<meta property="og:image" content="https://i.imgur.com/hGjkjwO.png">
+<meta property="og:image" content="https://i.imgur.com/BprFHTu.png">
+<meta property="og:image" content="https://i.imgur.com/bA7gsnn.png">
+<meta property="og:image" content="https://i.imgur.com/IlZ73UC.png">
+<meta property="og:image" content="https://i.imgur.com/eHmtd2L.png">
+<meta property="og:image" content="https://i.imgur.com/c8UkQiv.png">
+<meta property="og:image" content="https://i.imgur.com/A6Hvyry.png">
+<meta property="og:image" content="https://i.imgur.com/MScOF88.png">
+<meta property="og:image" content="https://i.imgur.com/iOmcezx.png">
+<meta property="og:image" content="https://i.imgur.com/Yy4YjRx.png">
+<meta property="article:published_time" content="2019-12-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-02-20T06:03:37.079Z">
+<meta property="article:author" content="Empty Wu">
+<meta property="article:tag" content="網路賺錢">
+<meta property="article:tag" content="工具分享">
+<meta property="article:tag" content="otohits.net">
+<meta property="article:tag" content="流量分享">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.otohits.net/content/img/otohits_en.gif">
+  
+    <link rel="alternate" href="/atom.xml" title="Empty's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-block title
-  title= page.title + ' | ' + config.title
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format(config.date_format)
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-      if theme.wordcount == true
-        include _partial/wordcount.pug
-    if theme.disqus.enable == true
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if theme.valine.enable == true
-      a.disqus-comment-count(href=url_for(page.path) + '#vcomment')
-        span.valine-comment-count(data-xid=url_for(page.path))
-        span= ' ' + __('Comment')
-    if theme.waline.enable == true
-      a.disqus-comment-count(href=url_for(page.path) + '#vcomment')
-        span.waline-comment-count(id=url_for(page.path))
-        span= ' ' + __('Comment')
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.donate.enable == true && page.donate != false
-      include _widget/donate.pug
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-    if theme.post_copyright.enable == true && page.copyright != false
-      include _widget/copyright.pug
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
 
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Empty&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Feed RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Cerca"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Cerca"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.heitang.info"></form>
+      </div>
+    </div>
+  </div>
+</header>
 
-    include _partial/tag.pug
-    include _partial/post_nav.pug
+      <div class="outer">
+        <section id="main"><article id="post-2029-12-27-otohits" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/12/27/2029-12-27-otohits/" class="article-date">
+  <time class="dt-published" datetime="2019-12-26T16:00:00.000Z" itemprop="datePublished">2019-12-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%95%86%E6%A5%AD/">商業</a>
+  </div>
 
-    if page.comments
-      include _partial/comments.pug
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      otohits.net 流量交換工具
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>[工具分享]免費增加流量，流量交換工具(otohits.net) 註冊及操作使用教學~20191227更新</p>
+<p>&#x3D;&#x3D;&#x3D;</p>
+<h3 id="otohits-net流量交換工具開始"><a href="#otohits-net流量交換工具開始" class="headerlink" title="otohits.net流量交換工具開始"></a>otohits.net流量交換工具開始</h3><p><a href="https://www.otohits.net/?ref=228704" target="_blank"><img src="https://www.otohits.net/content/img/otohits_en.gif" width="468" height="60" alt="Otohits.net, fast and efficient autosurf" /></a></p>
+<h4 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h4><blockquote>
+<p>免費增加流量工具對Blog很好用的工具，他只要掛一個工具，跟別人流量交換，進而讓自己文章或網站，進行曝光。</p>
+</blockquote>
+<blockquote>
+<p>可以使用<a target="_blank" rel="noopener" href="http://analytics.google.com/" title="iearnmoney.ga">Google Analytics</a>，實際去觀察，就會真真確切的知道自己的網頁有無提高流量。</p>
+</blockquote>
+<blockquote>
+<p>操作時候建議選擇英文，會比較容易使用</p>
+</blockquote>
+<h4 id="otohits-net註冊及操作步驟教學"><a href="#otohits-net註冊及操作步驟教學" class="headerlink" title="otohits.net註冊及操作步驟教學"></a>otohits.net註冊及操作步驟教學</h4><h3 id="註冊"><a href="#註冊" class="headerlink" title="註冊"></a>註冊</h3><ol>
+<li>註冊帳號</li>
+</ol>
+<blockquote>
+<p>打開瀏覽器輸入以下網址：<a target="_blank" rel="noopener" href="https://www.otohits.net/?ref=228704" title="iearnmoney.ga">https://www.otohits.net/?ref=228704</a><br>或點選下方圖片也可以</p>
+</blockquote>
+<p><a href="https://www.otohits.net/?ref=228704" target="_blank"><img src="https://www.otohits.net/content/img/otohits_en.gif" width="468" height="60" alt="Otohits.net, fast and efficient autosurf" /></a></p>
+<span id="more"></span>
+
+<ol start="2">
+<li><p>點選註冊按鈕<br><img src="https://i.imgur.com/hGjkjwO.png" alt="otohits.net" title="iearnmoney.ga"></p>
+</li>
+<li><p>填寫註冊資料</p>
+</li>
+</ol>
+<blockquote>
+<p>按照(下圖)填寫相關資訊，不需要一分鐘就可以立即申請成功。之後的註冊確認與登入是使用電子郵件為帳號，所以請確認所填寫的電子郵件可以收到信；這邊建議使用<a target="_blank" rel="noopener" href="https://mail.google.com/mail/?tab=wm&ogbl">GMAIL</a>帳號。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/BprFHTu.png" alt="otohits.net" title="iearnmoney.ga"></p>
+<ol start="4">
+<li>註冊成功確認</li>
+</ol>
+<blockquote>
+<p>註冊完成後，再郵件信箱內會收到確認信件(如下)，請點擊或複製網址至瀏覽器開啟，才能確定註冊成功哦~</p>
+</blockquote>
+<p><img src="https://i.imgur.com/bA7gsnn.png" alt="otohits.net" title="iearnmoney.ga"><br>5. 登錄<br><img src="https://i.imgur.com/IlZ73UC.png" alt="otohits.net" title="iearnmoney.ga"></p>
+<h3 id="操作步驟教學"><a href="#操作步驟教學" class="headerlink" title="操作步驟教學"></a>操作步驟教學</h3><ol>
+<li>添加網址</li>
+</ol>
+<blockquote>
+<p>登入Otohits.net後到My Sites（我的網站），添加要推廣的網站鏈接，就是上面推廣鏈接那些，新增連結的按鈕(如下)</p>
+</blockquote>
+<p><img src="https://i.imgur.com/eHmtd2L.png" alt="otohits.net" title="iearnmoney.ga"></p>
+<blockquote>
+<p>輸入以下資訊，進行加入網址。<br>(1) 網站網址：到ONEPTP的網站中，推廣鏈接一欄，複製一個鏈接貼上這邊信息欄位就是<br>(2) 類別：選安全<br>(3) 計時器：調到10second（秒）<br>(4) 使用模板：不用選</p>
+</blockquote>
+<p><img src="https://i.imgur.com/c8UkQiv.png" alt="otohits.net" title="iearnmoney.ga"></p>
+<ol start="2">
+<li>流量分配設定</li>
+</ol>
+<blockquote>
+<p>在automatic attribution（自動分配） 處選Yes，再往下滑點Update更新設定即可(<font color=red>很重要</font>)</p>
+</blockquote>
+<p><img src="https://i.imgur.com/A6Hvyry.png" alt="otohits.net" title="iearnmoney.ga"></p>
+<ol start="3">
+<li>下載應用程式</li>
+</ol>
+<blockquote>
+<p>至於要怎麼開始進行流量分配呢?<br>請至Applications 中，選取要下載軟體，安裝在電腦中；目前只有Windows 與Linux 版本</p>
+</blockquote>
+<p><img src="https://i.imgur.com/MScOF88.png" alt="otohits.net" title="iearnmoney.ga"></p>
+<ol start="4">
+<li>成就獎勵部分(Achievements)</li>
+</ol>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.otohits.net/?ref=228704" title="iearnmoney.ga">otohits.net</a> 本身有成就獎立，因為一開始只有三個網站可以分享，隨著流量分享次數越多，就可開啟更多的網站。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/iOmcezx.png" alt="otohits.net" title="iearnmoney.ga"></p>
+<ol start="5">
+<li>開啟應用程式</li>
+</ol>
+<blockquote>
+<p>安裝完後，打開應用程式，輸入帳號密碼(記得選擇紀錄密碼)，點選開始就可以放著不理它了。</p>
+</blockquote>
+<p><img src="https://i.imgur.com/Yy4YjRx.png" alt="otohits.net" title="iearnmoney.ga"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2019/12/27/2029-12-27-otohits/" data-id="cl0euaan00000vgfw7pnug95z" data-title="otohits.net 流量交換工具" class="article-share-link">Condividi</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/otohits-net/" rel="tag">otohits.net</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" rel="tag">工具分享</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E4%BA%AB/" rel="tag">流量分享</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/" rel="tag">網路賺錢</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/20/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuovi</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/06/2019-12-06-ONEPTP%E8%A2%AB%E5%8B%95%E6%8E%9B%E6%A9%9F%E6%94%B6%E5%85%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Vecchi</strong>
+      <div class="article-nav-title">ONEPTP被動掛機收入</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorie</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%95%86%E6%A5%AD/">商業</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Honeygain/" rel="tag">Honeygain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oneptp/" rel="tag">oneptp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/otohits-net/" rel="tag">otohits.net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" rel="tag">工具分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E4%BA%AB/" rel="tag">流量分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/" rel="tag">網路賺錢</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Honeygain/" style="font-size: 10px;">Honeygain</a> <a href="/tags/oneptp/" style="font-size: 10px;">oneptp</a> <a href="/tags/otohits-net/" style="font-size: 10px;">otohits.net</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" style="font-size: 10px;">工具分享</a> <a href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E4%BA%AB/" style="font-size: 15px;">流量分享</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/" style="font-size: 20px;">網路賺錢</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivio</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Post Recenti</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/02/20/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/2029-12-27-otohits/">otohits.net 流量交換工具</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/06/2019-12-06-ONEPTP%E8%A2%AB%E5%8B%95%E6%8E%9B%E6%A9%9F%E6%94%B6%E5%85%A5/">ONEPTP被動掛機收入</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/06/2019-12-06-honeygain/">Honeygain網路流量賺錢</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Empty Wu<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

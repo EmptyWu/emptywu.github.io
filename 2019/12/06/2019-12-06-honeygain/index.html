@@ -1,58 +1,286 @@
-extends base
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Honeygain網路流量賺錢 | Empty&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="[網賺分享]Honeygain網路流量賺錢~20191206更新 &#x3D;&#x3D;&#x3D; 教學開始說明推薦一個很夯的無腦掛機賺錢-Honeygain，他可以同時用電腦與手機平板掛機透過你的網路流量來累積收益，你的網路最好是吃到飽的(手機的話)，家用電腦會再背景執行。 官方說法：    1. 手機耗電量每天的預期消耗量可能為電池電量的5％-8％    2. 應用程序設置為永遠不會使用超">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Honeygain網路流量賺錢">
+<meta property="og:url" content="https://blog.heitang.info/2019/12/06/2019-12-06-honeygain/index.html">
+<meta property="og:site_name" content="Empty&#39;s Blog">
+<meta property="og:description" content="[網賺分享]Honeygain網路流量賺錢~20191206更新 &#x3D;&#x3D;&#x3D; 教學開始說明推薦一個很夯的無腦掛機賺錢-Honeygain，他可以同時用電腦與手機平板掛機透過你的網路流量來累積收益，你的網路最好是吃到飽的(手機的話)，家用電腦會再背景執行。 官方說法：    1. 手機耗電量每天的預期消耗量可能為電池電量的5％-8％    2. 應用程序設置為永遠不會使用超">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/wpQxwAC.png">
+<meta property="og:image" content="https://i.imgur.com/Q0EV1Vs.png">
+<meta property="og:image" content="https://i.imgur.com/9CfJwtG.png">
+<meta property="og:image" content="https://i.imgur.com/sjXeo8Q.png">
+<meta property="og:image" content="https://i.imgur.com/RFBcwDJ.png">
+<meta property="og:image" content="https://i.imgur.com/mA0rJ3f.png">
+<meta property="og:image" content="https://i.imgur.com/o0KbIVr.png">
+<meta property="og:image" content="https://i.imgur.com/BdyoTzt.png">
+<meta property="og:image" content="https://i.imgur.com/YBW8N1i.png">
+<meta property="og:image" content="https://i.imgur.com/DwyvKBv.png">
+<meta property="og:image" content="https://i.imgur.com/VAuCUrV.png">
+<meta property="og:image" content="https://i.imgur.com/FJ6bW2v.png">
+<meta property="article:published_time" content="2019-12-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-02-19T18:16:05.157Z">
+<meta property="article:author" content="Empty Wu">
+<meta property="article:tag" content="Honeygain">
+<meta property="article:tag" content="網路賺錢">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/wpQxwAC.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Empty's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
-block title
-  title= page.title + ' | ' + config.title
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format(config.date_format)
-      if page.categories.length > 0
-        span= ' | '
-        span.category
-          for category in page.categories.toArray()
-            a(href=url_for(category.path))= category.name
-      if theme.busuanzi == true
-        script(src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js', async)
-        span#busuanzi_container_page_pv= ' | '
-          span#busuanzi_value_page_pv
-          span= ' ' + __('Hits')
-      if theme.wordcount == true
-        include _partial/wordcount.pug
-    if theme.disqus.enable == true
-      a.disqus-comment-count(data-disqus-identifier=page.path, href=url_for(page.path) + '#disqus_thread')
-    if theme.changyan
-      a.ds-thread-count(href=url_for(page.path) + '#SOHUCS')
-        span#changyan_count_unit(style='font-size: 15px; color: #6E7173;') 0
-        span= ' ' + __('Comment')
-      script(src='https://assets.changyan.sohu.com/upload/plugins/plugins.count.js', async)
-    if theme.valine.enable == true
-      a.disqus-comment-count(href=url_for(page.path) + '#vcomment')
-        span.valine-comment-count(data-xid=url_for(page.path))
-        span= ' ' + __('Comment')
-    if theme.waline.enable == true
-      a.disqus-comment-count(href=url_for(page.path) + '#vcomment')
-        span.waline-comment-count(id=url_for(page.path))
-        span= ' ' + __('Comment')
-    if page.toc
-      div(class='clear')
-        div(id='toc' class='toc-article')
-          div(class='toc-title')= __('contents')
-          != toc(page.content, {list_number: theme.toc_number})
-    .post-content
-      != page.content
-    if theme.donate.enable == true && page.donate != false
-      include _widget/donate.pug
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-    if theme.post_copyright.enable == true && page.copyright != false
-      include _widget/copyright.pug
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
 
-    if theme.shareto == true
-      script(type='text/javascript', src=url_for(theme.js) + '/share.js' + '?v=' + theme.version, async)
-      a.article-share-link(data-url=page.permalink, data-id=page._id, data-qrcode=qrcode(page.permalink))= __('shareto')
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Empty&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Feed RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Cerca"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Cerca"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://blog.heitang.info"></form>
+      </div>
+    </div>
+  </div>
+</header>
 
-    include _partial/tag.pug
-    include _partial/post_nav.pug
+      <div class="outer">
+        <section id="main"><article id="post-2019-12-06-honeygain" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/12/06/2019-12-06-honeygain/" class="article-date">
+  <time class="dt-published" datetime="2019-12-05T16:00:00.000Z" itemprop="datePublished">2019-12-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%95%86%E6%A5%AD/">商業</a>
+  </div>
 
-    if page.comments
-      include _partial/comments.pug
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Honeygain網路流量賺錢
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>[網賺分享]Honeygain網路流量賺錢~20191206更新</p>
+<p>&#x3D;&#x3D;&#x3D;</p>
+<h3 id="教學開始"><a href="#教學開始" class="headerlink" title="教學開始"></a>教學開始</h3><h4 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h4><p>推薦一個很夯的無腦掛機賺錢-<a target="_blank" rel="noopener" href="https://dashboard.honeygain.com/ref/CHUNH5E6" title="honeygain">Honeygain</a>，他可以同時用電腦與手機平板掛機透過你的網路流量來累積收益，你的網路最好是吃到飽的(手機的話)，家用電腦會再背景執行。</p>
+<p>官方說法：<br>    1. 手機耗電量每天的預期消耗量可能為電池電量的5％-8％<br>    2. 應用程序設置為永遠不會使用超過可用網絡帶寬的10％<br>    3. 一個單一網絡（IP地址）上最多可以同時使用3台設備<br>    4. 每天最多最多只可以到15GB<br>    5. 滿20元美金申請payout-&gt;收供應商註冊信-&gt;填寫完成後等約2天入帳paypal</p>
+<p>對於每天本來就是24小時開機的，所以其實感覺還好，你電腦開著本來就會耗電了，手機平板則是維持在背景就好，關螢幕是Ok的，這個項目就是你沒網路就停止。<br>這個非常簡單，我大概花不到5分鐘就了解完，也全部安裝好開始掛了!</p>
+<h4 id="註冊教學"><a href="#註冊教學" class="headerlink" title="註冊教學"></a>註冊教學</h4><ol>
+<li><font color="red">請至這裡<a target="_blank" rel="noopener" href="https://dashboard.honeygain.com/ref/CHUNH5E6" title="honeygain">https://dashboard.honeygain.com/ref/CHUNH5E6</a></font>註冊，網站使用權限直接按ok即可，資料就只需要填寫信箱與密碼，建議使用gmail。再點一下redeem coupon code 就會出現可以輸入邀請碼的欄位，並輸入優惠兌換邀請碼getCode，即可獲得5美元(名額有限，請盡快使用)。paypal帳戶是等達出金門檻才會要求輸入。<span id="more"></span>
+<img src="https://i.imgur.com/wpQxwAC.png" alt="honeygain註冊" title="honeygain註冊畫面"></li>
+<li>註冊成功會發驗證信到你的信箱，記得去信箱收並點擊verify email 已完成確認。<br><img src="https://i.imgur.com/Q0EV1Vs.png" alt="honeygain註冊" title="honeygain註冊"></li>
+<li>於首頁右上角就可以下載應用程式，app目前只有安卓</li>
+</ol>
+<ul>
+<li>windows程式：<a target="_blank" rel="noopener" href="https://download.honeygain.com/windows-app/Honeygain_install.exe" title="honeygain">https://download.honeygain.com/windows-app/Honeygain_install.exe</a></li>
+<li>手機app下載網址：<a target="_blank" rel="noopener" href="https://honeygain.en.aptoide.com/" title="honeygain">https://honeygain.en.aptoide.com/</a></li>
+<li>MAC OS 下載位置：<a target="_blank" rel="noopener" href="https://download.honeygain.com/macos-app/Honeygain.dmg" title="honeygain">https://download.honeygain.com/macos-app/Honeygain.dmg</a></li>
+</ul>
+<h4 id="收入紀錄"><a href="#收入紀錄" class="headerlink" title="收入紀錄"></a>收入紀錄</h4><ol>
+<li>主要頁面：首頁就是可以看到你近30天的累積的流量(右)，還有積分進度條，旁邊有幫忙換算美金(左)，10MB流量&#x3D;1積分，10GB&#x3D;1美元，滿20元美金就可以申請提現) 左下可以看到你目前掛機的設備，右上角是應用程式有安卓的app跟windows程式可提供下載，右下角就是你的推薦連結，這邊也可以看到你的下線，左下角logo可以進行密碼變更與登出。<br><img src="https://i.imgur.com/9CfJwtG.png" alt="honeygain註冊" title="honeygain註冊"></li>
+</ol>
+<h4 id="出金教學"><a href="#出金教學" class="headerlink" title="出金教學"></a>出金教學</h4><p>由於目前還沒有到達可以出金的等級，先參考別人的，代我出金再把畫面補上。</p>
+<p><img src="https://i.imgur.com/sjXeo8Q.png" alt="honeygain" title="honeygain"><br><img src="https://i.imgur.com/RFBcwDJ.png" alt="honeygain" title="honeygain"><br><img src="https://i.imgur.com/mA0rJ3f.png" alt="honeygain" title="honeygain"><br><img src="https://i.imgur.com/o0KbIVr.png" alt="honeygain" title="honeygain"><br><img src="https://i.imgur.com/BdyoTzt.png" alt="honeygain" title="honeygain"><br><img src="https://i.imgur.com/YBW8N1i.png" alt="honeygain" title="honeygain"><br><img src="https://i.imgur.com/DwyvKBv.png" alt="honeygain" title="honeygain"><br><img src="https://i.imgur.com/VAuCUrV.png" alt="honeygain" title="honeygain"><br><img src="https://i.imgur.com/FJ6bW2v.png" alt="honeygain" title="honeygain"></p>
+<br/>
+
+<p>參考、出處：<a target="_blank" rel="noopener" href="https://i1.wp.com/iearn.tw/wp-content/uploads/2019/06/Honeygain%E5%B8%B8%E8%A6%8B%E5%95%8F%E9%A1%8C.png?w=1920&ssl=1" title="iearn.tw">【掛機賺錢】Honeygain利用網路流量賺錢，被動收入默默增加-20190930更新</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2019/12/06/2019-12-06-honeygain/" data-id="ckzu1lm500000e8fw4rlebu6f" data-title="Honeygain網路流量賺錢" class="article-share-link">Condividi</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Honeygain/" rel="tag">Honeygain</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/" rel="tag">網路賺錢</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/06/2019-12-06-ONEPTP%E8%A2%AB%E5%8B%95%E6%8E%9B%E6%A9%9F%E6%94%B6%E5%85%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nuovi</strong>
+      <div class="article-nav-title">
+        
+          ONEPTP被動掛機收入
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categorie</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%95%86%E6%A5%AD/">商業</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Honeygain/" rel="tag">Honeygain</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oneptp/" rel="tag">oneptp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/otohits-net/" rel="tag">otohits.net</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" rel="tag">工具分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E4%BA%AB/" rel="tag">流量分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/" rel="tag">網路賺錢</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Honeygain/" style="font-size: 10px;">Honeygain</a> <a href="/tags/oneptp/" style="font-size: 10px;">oneptp</a> <a href="/tags/otohits-net/" style="font-size: 10px;">otohits.net</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" style="font-size: 10px;">工具分享</a> <a href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E4%BA%AB/" style="font-size: 15px;">流量分享</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/" style="font-size: 20px;">網路賺錢</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archivio</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">二月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Post Recenti</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/02/20/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/2029-12-27-otohits/">otohits.net 流量交換工具</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/06/2019-12-06-ONEPTP%E8%A2%AB%E5%8B%95%E6%8E%9B%E6%A9%9F%E6%94%B6%E5%85%A5/">ONEPTP被動掛機收入</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/06/2019-12-06-honeygain/">Honeygain網路流量賺錢</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Empty Wu<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
