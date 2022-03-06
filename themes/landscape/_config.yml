@@ -1,0 +1,74 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+rss: /atom.xml
+banner: "images/2019-04-03 10-41-59.jpeg"
+
+# Content
+excerpt_link: Read More
+fancybox: true
+
+# # Footer
+# copyright: |-
+#   <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></br>
+#   All website licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></br>
+
+# Footer
+copyright:
+# Need help choosing? Please see...
+# https://creativecommons.org/choose/
+# https://choosealicense.com/
+# You can use html like below...
+# copyright: |-
+#   <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></br>
+#   All website licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></br>
+
+# Sidebar
+sidebar: right
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+
+# display widgets at the bottom of index pages (pagination == 2)
+index_widgets:
+# - category
+# - tagcloud
+# - archive
+
+# Widget behavior
+archive_type: 'monthly'
+show_count: false
+recent_posts_limits: 5
+
+# Miscellaneous
+google_analytics: 'UA-71248801-3'
+gauges_analytics:
+favicon: /favicon.png
+twitter:
+fb_admins:
+fb_app_id:
+
+# valine comment system. https://valine.js.org
+valine:
+  enable: true # if you want use valine,please set this value is true
+  appId:  2tymWpPM4hn6svH51WEOda9c-MdYXbMMI # leancloud application app id
+  appKey: azfT5owRX3nL8zno2lt0ruoE # leancloud application app key
+  notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
+  verify: false # valine verify code (true/false)
+  pageSize: 10 # comment list page size
+  avatar: mm # gravatar style https://valine.js.org/#/avatar
+  lang: zh-TW # i18n: zh-cn/en
+  placeholder: 歡迎交流指教 # valine comment input placeholder(like: Please leave your footprints )
+  guest_info: nick,mail,link #valine comment header info
+  visitor: true # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+  comment_count: true # if false, comment count will only be displayed in post page, not in home page
+
+
+leancloud_visitors:
+  enable: true
+  appId:  2tymWpPM4hn6svH51WEOda9c-MdYXbMMI # leancloud application app id
+  appKey: azfT5owRX3nL8zno2lt0ruoE # leancloud application app key
