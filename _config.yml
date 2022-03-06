@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Empty's Blog
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: Empty Wu
+language: zh-TW
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://emptywu.github.io
+url: https://blog.heitang.info
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -105,4 +105,4 @@ deploy:
   type: git
   repo: https://github.com/EmptyWu/emptywu.github.io.git
   branch: master
-  message: 'Empty's Blog'
+  message: Empty's Blog

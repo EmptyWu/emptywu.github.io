@@ -5,7 +5,7 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ## Quick Start
 
-### Create a new post
+### 建立一個新的md
 
 ``` bash
 $ hexo new "My New Post"
@@ -13,7 +13,7 @@ $ hexo new "My New Post"
 
 More info: [Writing](https://hexo.io/docs/writing.html)
 
-### Run server
+### npm 可以跑本機測試
 
 ``` bash
 $ hexo server
@@ -21,7 +21,7 @@ $ hexo server
 
 More info: [Server](https://hexo.io/docs/server.html)
 
-### Generate static files
+### 產生靜態的html網頁
 
 ``` bash
 $ hexo generate
@@ -29,7 +29,7 @@ $ hexo generate
 
 More info: [Generating](https://hexo.io/docs/generating.html)
 
-### Deploy to remote sites
+### 部屬至github上面
 
 ``` bash
 $ hexo deploy
