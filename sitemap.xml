@@ -2,7 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://emptywu.github.io/2019/12/06/2019-12-06-honeygain/</loc>
+    <loc>https://blog.heitang.info/2022/02/20/hello-world/</loc>
+    
+    <lastmod>2022-03-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.heitang.info/2019/12/06/2019-12-06-ONEPTP%E8%A2%AB%E5%8B%95%E6%8E%9B%E6%A9%9F%E6%94%B6%E5%85%A5/</loc>
+    
+    <lastmod>2022-02-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.heitang.info/2019/12/27/2029-12-27-otohits/</loc>
+    
+    <lastmod>2022-02-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.heitang.info/2019/12/06/2019-12-06-honeygain/</loc>
     
     <lastmod>2022-02-19</lastmod>
     
@@ -11,16 +38,7 @@
   </url>
   
   <url>
-    <loc>http://emptywu.github.io/404.html</loc>
-    
-    <lastmod>2022-02-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://emptywu.github.io/2022/02/20/hello-world/</loc>
+    <loc>https://blog.heitang.info/404.html</loc>
     
     <lastmod>2022-02-19</lastmod>
     
@@ -30,23 +48,51 @@
   
 
   <url>
-    <loc>http://emptywu.github.io/</loc>
-    <lastmod>2022-02-20</lastmod>
+    <loc>https://blog.heitang.info/</loc>
+    <lastmod>2022-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://emptywu.github.io/tags/Honeygain/</loc>
-    <lastmod>2022-02-20</lastmod>
+    <loc>https://blog.heitang.info/tags/Honeygain/</loc>
+    <lastmod>2022-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://emptywu.github.io/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/</loc>
-    <lastmod>2022-02-20</lastmod>
+    <loc>https://blog.heitang.info/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/</loc>
+    <lastmod>2022-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.heitang.info/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2022-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.heitang.info/tags/otohits-net/</loc>
+    <lastmod>2022-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.heitang.info/tags/%E6%B5%81%E9%87%8F%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2022-03-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.heitang.info/tags/oneptp/</loc>
+    <lastmod>2022-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -54,8 +100,8 @@
 
   
   <url>
-    <loc>http://emptywu.github.io/categories/%E5%95%86%E6%A5%AD/</loc>
-    <lastmod>2022-02-20</lastmod>
+    <loc>https://blog.heitang.info/categories/%E5%95%86%E6%A5%AD/</loc>
+    <lastmod>2022-03-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
