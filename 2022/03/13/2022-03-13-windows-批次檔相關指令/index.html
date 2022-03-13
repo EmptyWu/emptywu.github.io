@@ -15,14 +15,21 @@
 <!-- End Google Analytics -->
 
   
-  <title>Tag: 六角學院 | Empty&#39;s Blog</title>
+  <title>[Windows]批次檔相關指令 | Empty&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Empty&#39;s Blog">
-<meta property="og:url" content="https://blog.heitang.info/tags/%E5%85%AD%E8%A7%92%E5%AD%B8%E9%99%A2/index.html">
+  <meta name="description" content="在windows 環境底下，如果需要快速的使用一些設定，又不想要寫到複雜的程式，無非使用批次檔(bat)語法來的更快了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Windows]批次檔相關指令">
+<meta property="og:url" content="https://blog.heitang.info/2022/03/13/2022-03-13-windows-%E6%89%B9%E6%AC%A1%E6%AA%94%E7%9B%B8%E9%97%9C%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Empty&#39;s Blog">
+<meta property="og:description" content="在windows 環境底下，如果需要快速的使用一些設定，又不想要寫到複雜的程式，無非使用批次檔(bat)語法來的更快了。">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-03-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-13T15:08:13.496Z">
 <meta property="article:author" content="Empty Wu">
+<meta property="article:tag" content="Windows">
+<meta property="article:tag" content="批次檔">
+<meta property="article:tag" content="指令">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Empty's Blog" type="application/atom+xml">
@@ -80,41 +87,99 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/03/07/2022-03-07-%E5%AD%B8%E7%BF%92-Vue%E7%9B%B4%E6%92%AD%E7%8F%AD%20-%202022%20%E6%98%A5%E5%AD%A3%E7%8F%AD%20%E5%BF%83%E5%BE%97/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-03-06T16:00:00.000Z" itemprop="datePublished">3月 7</time>
+        <section id="main"><article id="post-2022-03-13-windows-批次檔相關指令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/13/2022-03-13-windows-%E6%89%B9%E6%AC%A1%E6%AA%94%E7%9B%B8%E9%97%9C%E6%8C%87%E4%BB%A4/" class="article-date">
+  <time class="dt-published" datetime="2022-03-12T16:00:00.000Z" itemprop="datePublished">2022-03-13</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Windows/">Windows</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/07/2022-03-07-%E5%AD%B8%E7%BF%92-Vue%E7%9B%B4%E6%92%AD%E7%8F%AD%20-%202022%20%E6%98%A5%E5%AD%A3%E7%8F%AD%20%E5%BF%83%E5%BE%97/">Vue直播班 - 2022 春季班 心得</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      [Windows]批次檔相關指令
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>在windows 環境底下，如果需要快速的使用一些設定，又不想要寫到複雜的程式，無非使用批次檔(bat)語法來的更快了。</p>
+<h2 id="批次檔簡述"><a href="#批次檔簡述" class="headerlink" title="批次檔簡述"></a>批次檔簡述</h2><p>批次檔是一連串的 DOS 內部或外部指令 (批次檔的意思是 指令集) ，或是執行程式的主檔名，因此只要懂得這些指令，加上一些簡單的語法，就可寫出批次檔。<br>終端用者利用自己編寫的批次檔，就可使 DOS 執行自己編定的程序。<br>批次檔是由 DOS 指令組成，因此批次檔有錯誤時，就等於我們在提示號 (C)鍵入錯的指令一樣，螢幕會有 Bad command or file name 的回應。<br>批次檔必定要是純文字檔案，可使用 DOS 的編輯器(DOS Editor) 。</p>
+<span id="more"></span>
+<h2 id="批次檔指令介紹"><a href="#批次檔指令介紹" class="headerlink" title="批次檔指令介紹"></a>批次檔指令介紹</h2><p>以下介紹，是目前使用到介紹給各位，未來也需還會增加。</p>
+<ol>
+<li><p>echo on&#x2F;off on：表示會顯示指令，off：表示不會顯示指令</p>
+</li>
+<li><p>%1 %2 …..： 表示帶入參數，最多可以使用10個參數，<br> 例: test.bat 參數1 參數2 ，則會在內部取代為%1&#x3D;參數1 %2&#x3D;參數2 的值</p>
+</li>
+<li><p>PAUSE：暫停批次檔的執行，在console上面會顯示press any key to contunue …… ；當按下任意鑑後會繼續執行。</p>
+</li>
+<li><p>GOTO：跳至某一行程式</p>
+  <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@echo <span class="keyword">on</span></span><br><span class="line">echo <span class="comment">&#x27;第一行&#x27;</span></span><br><span class="line"><span class="keyword">goto</span> _ex</span><br><span class="line">echo <span class="comment">&#x27;第二行&#x27;</span></span><br><span class="line">:_ex</span><br><span class="line">echo<span class="comment">&#x27;ex 第一行&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>  則會顯示</p>
+  <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="comment">&#x27;第一行&#x27;</span></span><br><span class="line"><span class="comment">&#x27;第一行&#x27;</span></span><br><span class="line"><span class="keyword">goto</span> _ex</span><br><span class="line">echo <span class="comment">&#x27;ex 第一行&#x27;</span></span><br><span class="line"><span class="comment">&#x27;ex 第一行&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>SET：設定參數(變數)<br>  參數寫入 SET 參數名稱&#x3D;要寫入的參數<br>  參數讀取 %參數名稱%</p>
+  <figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">:設定參數</span><br><span class="line">set path=%SystemDrive%</span><br><span class="line">echo %path%</span><br><span class="line">顯示結果</span><br><span class="line">set path=C:</span><br><span class="line">echo C:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>註解寫法： 只需要兩個::就會呈顯註解，使用上常用到但也常忘記寫法</p>
+</li>
+<li><p>如何知道作業系統內有那些預設的環境變數，可以在console 輸入  <font color="#ff0000;"><strong>set</strong> </font></p>
+</li>
+</ol>
+<p><del>由於要寫的內容太多，後續再慢慢補上</del></p>
+<p>參考資料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://taichunmin.pixnet.net/blog/post/29616488-%E6%89%B9%E6%AC%A1%E6%AA%94%E6%95%99%E5%AD%B8">批次檔教學</a></li>
+<li><a target="_blank" rel="noopener" href="http://forum.twbts.com/thread-10183-1-1.html">BAT批次指令： GOTO 的功能範例詳解</a></li>
+<li><a target="_blank" rel="noopener" href="https://shaochien.gitbooks.io/command-line-and-environment-variable-tutorial/content/environment-variable.html">環境變數 (Environment Variable)</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2022/03/13/2022-03-13-windows-%E6%89%B9%E6%AC%A1%E6%AA%94%E7%9B%B8%E9%97%9C%E6%8C%87%E4%BB%A4/" data-id="cl0peo8mn001o70fw4vtc7u1h" data-title="[Windows]批次檔相關指令" class="article-share-link">Share</a>
+      
+      
+        <a href="/2022/03/13/2022-03-13-windows-%E6%89%B9%E6%AC%A1%E6%AA%94%E7%9B%B8%E9%97%9C%E6%8C%87%E4%BB%A4/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/03/13/2022-03-13-windows-%E6%89%B9%E6%AC%A1%E6%AA%94%E7%9B%B8%E9%97%9C%E6%8C%87%E4%BB%A4/" itemprop="commentCount"></span>
+          留言
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/" rel="tag">Windows</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%89%B9%E6%AC%A1%E6%AA%94/" rel="tag">批次檔</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8C%87%E4%BB%A4/" rel="tag">指令</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/03/07/2022-03-07-%E5%AD%B8%E7%BF%92-Vue%E7%9B%B4%E6%92%AD%E7%8F%AD%20-%202022%20%E6%98%A5%E5%AD%A3%E7%8F%AD%20%E5%BF%83%E5%BE%97/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue直播班 - 2022 春季班 心得</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
+
+  <section id="comments" class="vcomment">
+
+  </section>
 </section>
         
           <aside id="sidebar">
