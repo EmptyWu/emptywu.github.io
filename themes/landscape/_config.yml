@@ -72,3 +72,6 @@ leancloud_visitors:
   enable: true
   appId:  2tymWpPM4hn6svH51WEOda9c-MdYXbMMI # leancloud application app id
   appKey: azfT5owRX3nL8zno2lt0ruoE # leancloud application app key
+
+utterances:
+  enable: true
