@@ -15,34 +15,21 @@
 <!-- End Google Analytics -->
 
   
-  <title>[C#].Net最簡單PostgreSQL連線方式 | Empty&#39;s Blog</title>
+  <title>Day1-非同步概念、建立 Promise | Empty&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="最簡單PostgreSQL連線方式">
+  <meta name="description" content="Promise 非同步作法，以往的非同步作法是使用callback function 寫法，這個寫法會一層一層下去比較難閱讀；而Promise是比較新的非同步作法，更容易閱讀一些">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[C#].Net最簡單PostgreSQL連線方式">
-<meta property="og:url" content="https://blog.heitang.info/2017/05/05/2017-05-22-CSharp-%E5%91%BC%E5%8F%ABPostgreSQL%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:title" content="Day1-非同步概念、建立 Promise">
+<meta property="og:url" content="https://blog.heitang.info/2022/04/11/2022-04-08-Day1-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81%E5%BB%BA%E7%AB%8B-Promise/index.html">
 <meta property="og:site_name" content="Empty&#39;s Blog">
-<meta property="og:description" content="最簡單PostgreSQL連線方式">
+<meta property="og:description" content="Promise 非同步作法，以往的非同步作法是使用callback function 寫法，這個寫法會一層一層下去比較難閱讀；而Promise是比較新的非同步作法，更容易閱讀一些">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="http://i.imgur.com/XSBjuIf.jpg">
-<meta property="og:image" content="http://i.imgur.com/S5CGK1P.jpg">
-<meta property="og:image" content="http://i.imgur.com/g1mgZtr.jpg">
-<meta property="og:image" content="http://i.imgur.com/Pb0RdOh.jpg">
-<meta property="og:image" content="http://i.imgur.com/5fxXgTK.jpg">
-<meta property="og:image" content="http://i.imgur.com/gavdscS.jpg">
-<meta property="og:image" content="http://i.imgur.com/vg2K4ul.jpg">
-<meta property="og:image" content="http://i.imgur.com/XpyhjlD.jpg">
-<meta property="og:image" content="http://i.imgur.com/ruNf7BA.jpg">
-<meta property="og:image" content="http://i.imgur.com/8em79kY.jpg">
-<meta property="og:image" content="http://i.imgur.com/XQbpnow.jpg">
-<meta property="article:published_time" content="2017-05-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-13T15:00:52.683Z">
+<meta property="article:published_time" content="2022-04-11T13:55:30.000Z">
+<meta property="article:modified_time" content="2022-04-11T14:20:36.268Z">
 <meta property="article:author" content="Empty Wu">
-<meta property="article:tag" content="C#">
-<meta property="article:tag" content=".Net">
-<meta property="article:tag" content="PostgreSQL">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Promise">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://i.imgur.com/XSBjuIf.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Empty's Blog" type="application/atom+xml">
   
@@ -99,14 +86,14 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-2017-05-22-CSharp-呼叫PostgreSQL方式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-2022-04-08-Day1-非同步概念、建立-Promise" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2017/05/05/2017-05-22-CSharp-%E5%91%BC%E5%8F%ABPostgreSQL%E6%96%B9%E5%BC%8F/" class="article-date">
-  <time class="dt-published" datetime="2017-05-04T16:00:00.000Z" itemprop="datePublished">2017-05-05</time>
+    <a href="/2022/04/11/2022-04-08-Day1-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81%E5%BB%BA%E7%AB%8B-Promise/" class="article-date">
+  <time class="dt-published" datetime="2022-04-11T13:55:30.000Z" itemprop="datePublished">2022-04-11</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/C/">C#</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
   </div>
 
   </div>
@@ -117,7 +104,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      [C#].Net最簡單PostgreSQL連線方式
+      Day1-非同步概念、建立 Promise
     </h1>
   
 
@@ -125,26 +112,18 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>.NET連接資料庫大部分都使用MSSQL，當你有需要連線到PostgreSQL做存取的時候，對於某些人可能就被考倒了，但其實是很簡單!</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Promise 非同步作法，以往的非同步作法是使用callback function 寫法，這個寫法會一層一層下去比較難閱讀；而Promise是比較新的非同步作法，更容易閱讀一些</p>
 <span id="more"></span>
-<h2 id="關於Npgsql"><a href="#關於Npgsql" class="headerlink" title="關於Npgsql"></a>關於Npgsql</h2><p>官方原文意思</p>
-<blockquote>
-<p>Npgsql is an open source ADO.NET Data Provider for PostgreSQL, it allows programs written in C#, Visual Basic, F# to &gt; access the PostgreSQL database server. It is implemented in 100% C# code, is free and is open source.</p>
-</blockquote>
-<p>照上面的意思，大約是</p>
-<blockquote>
-<p>Npgsql 是一個open source 的ADO.NET 數據連結方式，它允許在C#、VB、F#語言上連結資料庫。<br>它可以100%在C#執行，且是免費開源。</p>
-</blockquote>
-<h2 id="NET連接PostgreSQL教學"><a href="#NET連接PostgreSQL教學" class="headerlink" title=".NET連接PostgreSQL教學"></a>.NET連接PostgreSQL教學</h2><p>.NET連接**<em>PostgreSQL</em>**會用到Npgsql.dll這個參考，可以選擇自行下載再加入參考或是由Visual Studio 上面的<br><font color="#ff0000;"><strong>NuGet</strong></font><br>搜尋Npgsql，系統則會幫你加入參考，NuGet真是一個方便的東西。</p>
-<h3 id="到哪下載"><a href="#到哪下載" class="headerlink" title="到哪下載"></a>到哪下載</h3><blockquote>
-<p>官方網站：<a target="_blank" rel="noopener" href="http://www.npgsql.org/">http://www.npgsql.org/</a></p>
-</blockquote>
-<h2 id="實際操作步驟"><a href="#實際操作步驟" class="headerlink" title="實際操作步驟"></a>實際操作步驟</h2><p>以照下列步驟實作，就可以達成<br><strong>SETP.1.新增一個空的專案</strong></p>
-<p><img src="http://i.imgur.com/XSBjuIf.jpg" alt="新增專案"></p>
-<p><strong>SETP.2.把Npgsql加入參考，當然你也可以選擇使用NuGet來加入</strong><br><img src="http://i.imgur.com/S5CGK1P.jpg" alt="加入參考"><br><img src="http://i.imgur.com/g1mgZtr.jpg" alt="NuGet"><br><img src="http://i.imgur.com/Pb0RdOh.jpg" alt="NuGet"><br><img src="http://i.imgur.com/5fxXgTK.jpg" alt="成功加入參考"><br><strong>SETP.3.在程式碼中加入Using</strong><br><img src="http://i.imgur.com/gavdscS.jpg" alt="程式碼加入參考"><br><strong>SETP.4.個人的習慣是把讀寫資料庫寫成可以呼叫的函式，方便使用，才部會全部都寫成一堆，不好閱讀</strong><br><img src="http://i.imgur.com/vg2K4ul.jpg" alt="加入呼叫DB的方式"><br><img src="http://i.imgur.com/XpyhjlD.jpg" alt="加入呼叫DB的方式"><br><strong>SETP.5.最後實際呼叫上面寫好的函式，來執行讀取、新增功能。</strong><br><img src="http://i.imgur.com/ruNf7BA.jpg" alt="實際運用呼叫"><br><img src="http://i.imgur.com/8em79kY.jpg" alt="實際運用呼叫"><br><strong>SETP.6.實際執行的結果</strong><br><img src="http://i.imgur.com/XQbpnow.jpg" alt="最後執行結果"></p>
-<h2 id="程式碼放在GitHub供大家參考"><a href="#程式碼放在GitHub供大家參考" class="headerlink" title="程式碼放在GitHub供大家參考"></a>程式碼放在GitHub供大家參考</h2><p><a target="_blank" rel="noopener" href="https://github.com/EmptyWu/NET.git">https://github.com/EmptyWu/NET.git</a></p>
-<p>最後附上影片供參考</p>
-<iframe src="https://www.youtube.com/embed/Wbctmph82Xs" width="560" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
+<h2 id="建立Promist-語法"><a href="#建立Promist-語法" class="headerlink" title="建立Promist 語法"></a>建立Promist 語法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 執行一些非同步作業，最終呼叫:</span></span><br><span class="line">  <span class="comment">//</span></span><br><span class="line">  <span class="comment">// resolve(someValue); // 實現</span></span><br><span class="line">  <span class="comment">// 或</span></span><br><span class="line">  <span class="comment">// reject(&quot;failure reason&quot;); // 拒絕</span></span><br><span class="line">&#125; );</span><br></pre></td></tr></table></figure>
+
+<p>其中兩個參數 resolve 及 reject 都是函式，分別代表實現(完成)及拒絕的函式，非同步成功就會執行resolve函式完成Promise；<br>失敗則執行reject 函式，執行reject 函式會回傳error物件或失敗訊息。</p>
+<h2 id="在原有funtion-中修改為-Promise"><a href="#在原有funtion-中修改為-Promise" class="headerlink" title="在原有funtion 中修改為 Promise"></a>在原有funtion 中修改為 Promise</h2><p>原本語法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">checkScore</span> = (<span class="params">score</span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">/* 回傳一個 Promise，並執行以下非同步操作*/</span></span><br><span class="line">  <span class="keyword">const</span> score = <span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>);</span><br><span class="line">  <span class="comment">/* 判斷流程請嘗試使用 setTimeout() 執行 */</span></span><br><span class="line">  <span class="keyword">if</span>(score &gt;= <span class="number">60</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(score); <span class="comment">// 執行實現方法</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;不及格&quot;</span>); <span class="comment">// 執行拒絕方法</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">checkScore</span>();</span><br></pre></td></tr></table></figure>
+<p>使用 Promise 語法改寫</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">checkScore</span> = (<span class="params">score</span>)=&gt;&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">res, rej</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> score = <span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">100</span>);</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (score &gt;= <span class="number">60</span>) &#123;</span><br><span class="line">        <span class="title function_">res</span>(<span class="variable language_">console</span>.<span class="title function_">log</span>(score)); <span class="comment">// 執行實現方法</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="title function_">rej</span>(<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;不及格&quot;</span>));<span class="comment">// 執行拒絕方法</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;); </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">checkScore</span>();</span><br></pre></td></tr></table></figure>
+<p>其中增加了 promise ，且增加了setTimeout ，模擬非同地的等待</p>
+<p>以上見解，如有錯誤地方還請留言告知，感謝。</p>
 
         <script src="https://utteranc.es/client.js"
         repo="EmptyWu/emptywu.github.io"
@@ -156,16 +135,16 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2017/05/05/2017-05-22-CSharp-%E5%91%BC%E5%8F%ABPostgreSQL%E6%96%B9%E5%BC%8F/" data-id="cl0pem8u4000t70fwflnzbgmp" data-title="[C#].Net最簡單PostgreSQL連線方式" class="article-share-link">Share</a>
+      <a data-url="https://blog.heitang.info/2022/04/11/2022-04-08-Day1-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81%E5%BB%BA%E7%AB%8B-Promise/" data-id="cl1usmf0i0000gofwb7x89xul" data-title="Day1-非同步概念、建立 Promise" class="article-share-link">Share</a>
       
       
-        <a href="/2017/05/05/2017-05-22-CSharp-%E5%91%BC%E5%8F%ABPostgreSQL%E6%96%B9%E5%BC%8F/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2017/05/05/2017-05-22-CSharp-%E5%91%BC%E5%8F%ABPostgreSQL%E6%96%B9%E5%BC%8F/" itemprop="commentCount"></span>
+        <a href="/2022/04/11/2022-04-08-Day1-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81%E5%BB%BA%E7%AB%8B-Promise/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/04/11/2022-04-08-Day1-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81%E5%BB%BA%E7%AB%8B-Promise/" itemprop="commentCount"></span>
           留言
         </a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Net/" rel="tag">.Net</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL/" rel="tag">PostgreSQL</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Promise/" rel="tag">Promise</a></li></ul>
 
     </footer>
   </div>
@@ -173,19 +152,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/12/06/2019-12-06-%E5%95%86%E6%A5%AD-honeygain/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/04/11/2022-04-11-Day2-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81%E4%BD%BF%E7%94%A8-Promise/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Honeygain網路流量賺錢
+          2022-04-11-Day2-非同步概念、使用 Promise
         
       </div>
     </a>
   
   
-    <a href="/2017/05/01/2017-05-01-windows-%E9%97%9C%E6%A9%9F%E5%8D%BB%E6%B2%92%E6%9C%89%E9%97%9C%E6%A9%9F/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/03/21/2022-03-21-%E8%B3%87%E6%96%99%E5%BA%AB-Oracle%E8%B3%87%E6%96%99%E5%BA%AB%E5%8C%AF%E5%85%A5%E5%8C%AF%E5%87%BA/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">[Windows]Win10關機，卻不是關機，解決方法</div>
+      <div class="article-nav-title">Oracle資料庫匯入匯出</div>
     </a>
   
 </nav>
