@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.heitang.info/2022/04/15/2022-04-15-Day6-Mongoose%E7%9A%84Schema%E6%92%B0%E5%AF%AB%E8%A6%8F%E5%89%87/</loc>
+    
+    <lastmod>2022-04-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.heitang.info/2022/04/18/2022-04-18-Day7-model%E3%80%81Mongoose-%E6%96%B0%E5%A2%9E-%E6%9F%A5%E8%A9%A2/</loc>
     
     <lastmod>2022-04-18</lastmod>

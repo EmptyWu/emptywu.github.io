@@ -15,21 +15,22 @@
 <!-- End Google Analytics -->
 
   
-  <title>Day5-非同步概念、async await | Empty&#39;s Blog</title>
+  <title>Day6-Mongoose的Schema撰寫規則 | Empty&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="async 及 await 是非同步函式的一種寫法，可以讓非同步的執行更趨近於同步作業。">
+  <meta name="description" content="Mongoose 是 MongoDB 的 ODM（Object Data Modeling） 套件，Mongoose 套件會藉由 MongoDB driver 操作資料庫的資料">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Day5-非同步概念、async await">
-<meta property="og:url" content="https://blog.heitang.info/2022/04/15/2022-04-14-Day5-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81async-await/index.html">
+<meta property="og:title" content="Day6-Mongoose的Schema撰寫規則">
+<meta property="og:url" content="https://blog.heitang.info/2022/04/15/2022-04-15-Day6-Mongoose%E7%9A%84Schema%E6%92%B0%E5%AF%AB%E8%A6%8F%E5%89%87/index.html">
 <meta property="og:site_name" content="Empty&#39;s Blog">
-<meta property="og:description" content="async 及 await 是非同步函式的一種寫法，可以讓非同步的執行更趨近於同步作業。">
+<meta property="og:description" content="Mongoose 是 MongoDB 的 ODM（Object Data Modeling） 套件，Mongoose 套件會藉由 MongoDB driver 操作資料庫的資料">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-04-15T00:54:34.000Z">
-<meta property="article:modified_time" content="2022-04-15T04:01:42.761Z">
+<meta property="article:published_time" content="2022-04-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-18T04:11:35.460Z">
 <meta property="article:author" content="Empty">
 <meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="async">
-<meta property="article:tag" content="await">
+<meta property="article:tag" content="MongoDB">
+<meta property="article:tag" content="Mongoose">
+<meta property="article:tag" content="Schema">
 <meta name="twitter:card" content="summary">
   
   
@@ -87,10 +88,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-2022-04-14-Day5-非同步概念、async-await" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-2022-04-15-Day6-Mongoose的Schema撰寫規則" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/04/15/2022-04-14-Day5-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81async-await/" class="article-date">
-  <time class="dt-published" datetime="2022-04-15T00:54:34.000Z" itemprop="datePublished">2022-04-15</time>
+    <a href="/2022/04/15/2022-04-15-Day6-Mongoose%E7%9A%84Schema%E6%92%B0%E5%AF%AB%E8%A6%8F%E5%89%87/" class="article-date">
+  <time class="dt-published" datetime="2022-04-14T16:00:00.000Z" itemprop="datePublished">2022-04-15</time>
 </a>
     
   <div class="article-category">
@@ -105,7 +106,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Day5-非同步概念、async await
+      Day6-Mongoose的Schema撰寫規則
     </h1>
   
 
@@ -113,17 +114,48 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>async 及 await 是非同步函式的一種寫法，可以讓非同步的執行更趨近於同步作業。<br>在非同步函式前加上 async，此函式時回傳值就會被轉為一個 Promise。</p>
-<p>在 async 非同步函式中，使用 await 等待接收回傳的結果，因此會暫停此函式的執行，並且等待 Promise 的解析，解析完回傳值，並繼續下一個 async 函式的執行。</p>
-<p>也就是說在未等待回傳結果，不會執行下一個程式</p>
-<p>例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">resolveAfter2Seconds</span>(<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">resolve</span>(x);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">add1</span>(<span class="params">x</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> a = <span class="keyword">await</span> <span class="title function_">resolveAfter2Seconds</span>(<span class="number">20</span>);</span><br><span class="line">  <span class="keyword">const</span> b = <span class="keyword">await</span> <span class="title function_">resolveAfter2Seconds</span>(<span class="number">30</span>);</span><br><span class="line">  <span class="keyword">return</span> x + a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mongoose 是 MongoDB 的 ODM（Object Data Modeling） 套件，Mongoose 套件會藉由 MongoDB driver 操作資料庫的資料。</p>
+<p>使用 ODM 可以降低開發和維護成本， ODM 會使用 JavaScript 的物件反映出資料庫中的資料，相對於使用資料庫原生的查詢語言 (SQL)，用 ODM 的方式操作資料庫會更好上手</p>
 <span id="more"></span>
+<h3 id="安裝方式"><a href="#安裝方式" class="headerlink" title="安裝方式"></a>安裝方式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install mongoose --save</span><br></pre></td></tr></table></figure>
 
-<h2 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h2><p>流程：<br>批改作業 → 檢查獎勵 → 給予獎勵 → 退學或懲罰</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 批改作業</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">correctTest</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> score = <span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>()*<span class="number">100</span>);</span><br><span class="line">      <span class="keyword">if</span>(score &gt;= <span class="number">60</span>) &#123;</span><br><span class="line">        <span class="title function_">resolve</span>(&#123;</span><br><span class="line">          name,</span><br><span class="line">          score</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="title function_">reject</span>(<span class="string">&quot;您已達退學門檻&quot;</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">2000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 檢查獎勵</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">checkReward</span>(<span class="params">data</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(data.<span class="property">score</span> &gt;= <span class="number">90</span>) &#123;</span><br><span class="line">        <span class="title function_">resolve</span>(<span class="string">`<span class="subst">$&#123;data.name&#125;</span> 獲得電影票`</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (data.<span class="property">score</span> &gt;= <span class="number">60</span> &amp;&amp; data.<span class="property">score</span> &lt; <span class="number">90</span>) &#123;</span><br><span class="line">        <span class="title function_">resolve</span>(<span class="string">`<span class="subst">$&#123;data.name&#125;</span> 獲得嘉獎`</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="title function_">reject</span>(<span class="string">`您沒有獎品`</span>)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="number">2000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>將以下這段程式碼改寫為 async await 的寫法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> init = <span class="keyword">async</span> <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line"> <span class="keyword">await</span> <span class="title function_">correctTest</span>(<span class="string">&quot;Empty&quot;</span>)</span><br><span class="line"> .<span class="title function_">then</span>(<span class="function"><span class="params">source</span>=&gt;</span><span class="keyword">await</span> <span class="title function_">checkReward</span>(source))</span><br><span class="line"> .<span class="title function_">then</span>(<span class="function"><span class="params">reward</span>=&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(reward))</span><br><span class="line"> .<span class="title function_">catch</span>(<span class="function">(<span class="params">err</span>)=&gt;</span><span class="variable language_">console</span>.<span class="title function_">log</span>(err))</span><br><span class="line"> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">init</span>();</span><br></pre></td></tr></table></figure>
+<h3 id="nodejs-使用-Mongoose-連線-mongoDB-的連線方式"><a href="#nodejs-使用-Mongoose-連線-mongoDB-的連線方式" class="headerlink" title="nodejs 使用 Mongoose 連線 mongoDB 的連線方式"></a>nodejs 使用 Mongoose 連線 mongoDB 的連線方式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>);</span><br><span class="line">mongoose.<span class="title function_">connect</span>(<span class="string">&#x27;mongodb://localhost:27017/DataBaseName&#x27;</span>);</span><br><span class="line"><span class="comment">// DataBaseName 為資料庫的名稱，可以改為自己的資料庫名稱</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Mongoose-Schema-寫法"><a href="#Mongoose-Schema-寫法" class="headerlink" title="Mongoose Schema 寫法"></a>Mongoose Schema 寫法</h3><p>建立 Schema（資料庫綱要），定義需要哪些資料、型別、是否顯示、預設值…等等。</p>
+<p>例:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Schema</span> = <span class="keyword">new</span> mongoose.<span class="title class_">Schema</span>(&#123;</span><br><span class="line">  <span class="attr">title</span>:  <span class="title class_">String</span>, <span class="comment">// String is shorthand for &#123;type: String&#125;</span></span><br><span class="line">  <span class="attr">author</span>: <span class="title class_">String</span>,</span><br><span class="line">  <span class="attr">body</span>:   <span class="title class_">String</span>,</span><br><span class="line">  <span class="attr">comments</span>: [&#123; <span class="attr">body</span>: <span class="title class_">String</span>, <span class="attr">date</span>: <span class="title class_">Date</span> &#125;],</span><br><span class="line">  <span class="attr">date</span>: &#123; <span class="attr">type</span>: <span class="title class_">Date</span>, <span class="attr">default</span>: <span class="title class_">Date</span>.<span class="property">now</span> &#125;,</span><br><span class="line">  <span class="attr">hidden</span>: <span class="title class_">Boolean</span>,</span><br><span class="line">  <span class="attr">meta</span>: &#123;</span><br><span class="line">    <span class="attr">votes</span>: <span class="title class_">Number</span>,</span><br><span class="line">    <span class="attr">favs</span>:  <span class="title class_">Number</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>因此接收到資料，mongoose就依此 Schema 把關資料是否帶入正確。</p>
+<h4 id="type"><a href="#type" class="headerlink" title="type"></a><strong>type</strong></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title</span>: &#123;<span class="attr">type</span>: <span class="title class_">String</span>&#125; <span class="comment">// 代表 title 需為一個字串</span></span><br><span class="line"><span class="comment">//只有設定型別可以使用簡寫 title: String</span></span><br></pre></td></tr></table></figure>
+<p>物件內的型別，可以針對單獨設定</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title</span>: &#123;</span><br><span class="line">  <span class="attr">chinese</span>: &#123;<span class="attr">type</span>: <span class="title class_">String</span>&#125;,</span><br><span class="line">  <span class="attr">english</span>: &#123;<span class="attr">type</span>: <span class="title class_">String</span>&#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>若 title 為一個陣列，也可指定陣列中資料型別</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title</span>: [&#123;<span class="attr">type</span>: <span class="title class_">String</span>&#125;] <span class="comment">// 若只有設定型別可以使用簡寫 [String]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="required"><a href="#required" class="headerlink" title="required"></a><strong>required</strong></h4><p>此資料需為必填項目，可以設定 required，並且可客製化錯誤訊息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title</span>: &#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="title class_">String</span>,</span><br><span class="line">  <span class="attr">required</span>: [<span class="literal">true</span>, <span class="string">&#x27;title 為必填&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="default"><a href="#default" class="headerlink" title="default"></a><strong>default</strong></h4><p>若有資料未填寫，也可以設定此資料的預設值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title</span>: &#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="title class_">String</span>,</span><br><span class="line">  <span class="attr">default</span>: <span class="string">&#x27;未命名的文章&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通常 required 與 default 不會同時使用</p>
+<h4 id="select"><a href="#select" class="headerlink" title="select"></a><strong>select</strong></h4><p>資料欄位希望可以被保護，不顯示出來，可以加入 select 設定</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">password</span>: &#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="title class_">String</span>,</span><br><span class="line">  <span class="attr">select</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="enum"><a href="#enum" class="headerlink" title="enum"></a><strong>enum</strong></h4><p>此資料設定型別為 String 或 Number，可以設定 enum 指定需為哪些值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">author</span>: &#123;</span><br><span class="line">  <span class="attr">type</span>: <span class="title class_">String</span>,</span><br><span class="line">  <span class="attr">enum</span>: [<span class="string">&#x27;Amy&#x27;</span>,<span class="string">&#x27;Bob&#x27;</span>,<span class="string">&#x27;Cody&#x27;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h3><p>設計手搖飲的 Schema，依照以下規則：</p>
+<ol>
+<li>產品名稱（product）: 需為字串,必填，若未填寫，錯誤訊息為「產品名稱未填寫」</li>
+<li>價錢（price）: 需為數字, 必填，若未填寫，錯誤訊息為「價錢未填寫」</li>
+<li>冰塊（ice）： 需為字串, 若未填寫預設為 ‘正常冰’</li>
+<li>甜度（sugar）：需為字串，若未填寫預設為 ‘全糖’</li>
+<li>配料（toppings）：為陣列，內容需為字串</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> drinkSchema = <span class="keyword">new</span> mongoose.<span class="title class_">Schema</span>(&#123; </span><br><span class="line">    <span class="attr">product</span>: &#123;<span class="attr">type</span>: <span class="title class_">String</span>,<span class="attr">required</span>: [<span class="literal">true</span>, <span class="string">&#x27;產品名稱未填寫&#x27;</span>]&#125;,</span><br><span class="line">    <span class="attr">price</span>: &#123;<span class="attr">type</span>: <span class="title class_">Number</span>,<span class="attr">required</span>: [<span class="literal">true</span>, <span class="string">&#x27;價錢未填寫&#x27;</span>]&#125;,</span><br><span class="line">    <span class="attr">ice</span>: &#123;<span class="attr">type</span>: <span class="title class_">String</span>,<span class="attr">default</span>: <span class="string">&#x27;正常冰&#x27;</span>&#125;,</span><br><span class="line">    <span class="attr">sugar</span>: &#123;<span class="attr">type</span>: <span class="title class_">String</span>,<span class="attr">default</span>: <span class="string">&#x27;全糖&#x27;</span>&#125;,</span><br><span class="line">    <span class="attr">toppings</span>: [&#123;<span class="attr">type</span>: <span class="title class_">String</span>&#125;]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
 
 <p>以上見解，如有錯誤地方還請留言告知，感謝。</p>
 
@@ -137,16 +169,16 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/04/15/2022-04-14-Day5-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81async-await/" data-id="cl1zq9mof00000sfw7sxv34mt" data-title="Day5-非同步概念、async await" class="article-share-link">Teilen</a>
+      <a data-url="https://blog.heitang.info/2022/04/15/2022-04-15-Day6-Mongoose%E7%9A%84Schema%E6%92%B0%E5%AF%AB%E8%A6%8F%E5%89%87/" data-id="cl2477gml000088fwfzhe0xtz" data-title="Day6-Mongoose的Schema撰寫規則" class="article-share-link">Teilen</a>
       
       
-        <a href="/2022/04/15/2022-04-14-Day5-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81async-await/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/04/15/2022-04-14-Day5-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81async-await/" itemprop="commentCount"></span>
+        <a href="/2022/04/15/2022-04-15-Day6-Mongoose%E7%9A%84Schema%E6%92%B0%E5%AF%AB%E8%A6%8F%E5%89%87/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/04/15/2022-04-15-Day6-Mongoose%E7%9A%84Schema%E6%92%B0%E5%AF%AB%E8%A6%8F%E5%89%87/" itemprop="commentCount"></span>
           Kommentare
         </a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/async/" rel="tag">async</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/await/" rel="tag">await</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongoose/" rel="tag">Mongoose</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Schema/" rel="tag">Schema</a></li></ul>
 
     </footer>
   </div>
@@ -154,19 +186,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/04/15/2022-04-15-windows-VSCode%E5%A2%9E%E5%8A%A0%E5%88%B0%E5%8F%B3%E9%8D%B5%E5%BF%AB%E6%8D%B7%E8%8F%9C%E5%96%AE%E4%B8%AD/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/04/15/2022-04-14-Day5-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81async-await/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          windows-VSCode增加到右鍵快捷菜單中
+          Day5-非同步概念、async await
         
       </div>
     </a>
   
   
-    <a href="/2022/04/15/2022-04-15-Day6-Mongoose%E7%9A%84Schema%E6%92%B0%E5%AF%AB%E8%A6%8F%E5%89%87/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/04/14/2022-04-13-Day4-MongoDB-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%EF%BC%9A-%E4%BF%AE%E6%94%B9%E3%80%81%E5%88%AA%E9%99%A4/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">Day6-Mongoose的Schema撰寫規則</div>
+      <div class="article-nav-title">Day4-MongoDB 基本操作： 修改、刪除</div>
     </a>
   
 </nav>
