@@ -15,22 +15,22 @@
 <!-- End Google Analytics -->
 
   
-  <title>Oracle資料庫匯入匯出 | Empty&#39;s Blog</title>
+  <title>Day7-model、Mongoose 新增 / 查詢 | Empty&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Oracle資料庫匯入匯出">
+  <meta name="description" content="接續前一天，繼續來說明Mongoose的新增 &#x2F; 查詢部分。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Oracle資料庫匯入匯出">
-<meta property="og:url" content="https://blog.heitang.info/2022/03/21/2022-03-21-%E8%B3%87%E6%96%99%E5%BA%AB-Oracle%E8%B3%87%E6%96%99%E5%BA%AB%E5%8C%AF%E5%85%A5%E5%8C%AF%E5%87%BA/index.html">
+<meta property="og:title" content="Day7-model、Mongoose 新增 &#x2F; 查詢">
+<meta property="og:url" content="https://blog.heitang.info/2022/04/18/2022-04-18-Day7-model%E3%80%81Mongoose-%E6%96%B0%E5%A2%9E-%E6%9F%A5%E8%A9%A2/index.html">
 <meta property="og:site_name" content="Empty&#39;s Blog">
-<meta property="og:description" content="Oracle資料庫匯入匯出">
+<meta property="og:description" content="接續前一天，繼續來說明Mongoose的新增 &#x2F; 查詢部分。">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-03-21T09:44:22.000Z">
-<meta property="article:modified_time" content="2022-03-21T09:49:54.055Z">
+<meta property="article:published_time" content="2022-04-18T03:56:41.000Z">
+<meta property="article:modified_time" content="2022-04-18T04:07:55.106Z">
 <meta property="article:author" content="Empty">
-<meta property="article:tag" content="資料庫">
-<meta property="article:tag" content="Oracle">
-<meta property="article:tag" content="imp">
-<meta property="article:tag" content="exp">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="MongoDB">
+<meta property="article:tag" content="Mongoose">
+<meta property="article:tag" content="Schema">
 <meta name="twitter:card" content="summary">
   
   
@@ -88,14 +88,14 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-2022-03-21-資料庫-Oracle資料庫匯入匯出" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-2022-04-18-Day7-model、Mongoose-新增-查詢" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/03/21/2022-03-21-%E8%B3%87%E6%96%99%E5%BA%AB-Oracle%E8%B3%87%E6%96%99%E5%BA%AB%E5%8C%AF%E5%85%A5%E5%8C%AF%E5%87%BA/" class="article-date">
-  <time class="dt-published" datetime="2022-03-21T09:44:22.000Z" itemprop="datePublished">2022-03-21</time>
+    <a href="/2022/04/18/2022-04-18-Day7-model%E3%80%81Mongoose-%E6%96%B0%E5%A2%9E-%E6%9F%A5%E8%A9%A2/" class="article-date">
+  <time class="dt-published" datetime="2022-04-18T03:56:41.000Z" itemprop="datePublished">2022-04-18</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%B3%87%E6%96%99%E5%BA%AB/">資料庫</a>
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
   </div>
 
   </div>
@@ -106,7 +106,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      Oracle資料庫匯入匯出
+      Day7-model、Mongoose 新增 / 查詢
     </h1>
   
 
@@ -114,12 +114,32 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Oracle 開發上會遇到需要資料從正式機搬移到測試機，進行開發測試。因此整理一個匯入、匯出的方式，方便自己進行資料移轉。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>接續前一天，繼續來說明Mongoose的新增 &#x2F; 查詢部分。<br>須先在專案中引入 Mongoose 套件、連線本地端資料庫，並建立 Schema(可參考 Day6 任務)<br>建立 Model 寫法如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> roomSchema = <span class="keyword">new</span> mongoose.<span class="title class_">Schema</span>(&#123; </span><br><span class="line">    <span class="attr">name</span>: <span class="title class_">String</span>, </span><br><span class="line">    <span class="attr">price</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="title class_">Number</span>,</span><br><span class="line">        <span class="attr">required</span>: [<span class="literal">true</span>, <span class="string">&#x27;價格必填&#x27;</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">rating</span>: <span class="title class_">Number</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 建立 Model</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Room</span> = mongoose.<span class="title function_">model</span>(<span class="string">&#x27;Room&#x27;</span>, roomSchema);</span><br></pre></td></tr></table></figure>
+<p>mongoose.model() 第一個參數為 Collection 的名稱，第二個參數帶入 Schema</p>
+<p>其中需注意第一個參數 Collection 的名稱，Mongoose 會自動視為小寫開頭及改為複數（結尾加 s）<br>因此 Room Model 實際上是連接至名稱為 rooms 的 Collection</p>
+<p>接著可以使用 Model 新增 document</p>
 <span id="more"></span>
 
-<h3 id="Oracle-匯出資料表語法"><a href="#Oracle-匯出資料表語法" class="headerlink" title="Oracle 匯出資料表語法"></a>Oracle 匯出資料表語法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exp 帳號/密碼@ServiceName file=檔案位置 <span class="built_in">log</span>=Log位置 tables=(匯出的資料表)</span><br><span class="line"><span class="comment">#ServiceName=&gt; 服務名稱，NLS服務名稱</span></span><br></pre></td></tr></table></figure>
+<h3 id="Mongoose-新增"><a href="#Mongoose-新增" class="headerlink" title="Mongoose 新增"></a>Mongoose 新增</h3><p>寫法如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Room</span> = mongoose.<span class="title function_">model</span>(<span class="string">&#x27;Room&#x27;</span>, roomSchema);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> testRoom = <span class="keyword">new</span> <span class="title class_">Room</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;總統套房單人房&#x27;</span>,</span><br><span class="line">  <span class="attr">price</span>: <span class="number">2000</span>,</span><br><span class="line">  <span class="attr">rating</span>: <span class="number">4.5</span></span><br><span class="line">&#125;);</span><br><span class="line">testRoom.<span class="title function_">save</span>()</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;新增資料成功&#x27;</span>)&#125;)</span><br><span class="line">  .<span class="title function_">catch</span>(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(error)&#125;)</span><br></pre></td></tr></table></figure>
+<p>建立 Model 後，若要使用 Model 新增資料，需先使用 new 建立 Room 的實體（instance），一個 Model 的 instance 就是 document</p>
+<p>產生一個 document 後就可以使用 save() 將其儲存到 rooms Collection 中</p>
+<p>新增 document 也可以使用另一種方式create()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Room</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;總統套房單人房&#x27;</span>,</span><br><span class="line">  <span class="attr">price</span>: <span class="number">2000</span>,</span><br><span class="line">  <span class="attr">rating</span>: <span class="number">4.5</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>執行後可以連線至 MongoDB Compass 本地端資料庫 ‘mongodb:&#x2F;&#x2F;localhost:27017&#x2F;test’（test 可更換為自己建立的資料庫名稱）查看，若新增成功可以看到 rooms collection 中會有剛剛新增的資料</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">_id</span>: <span class="title class_">ObjectId</span>(<span class="string">&#x27;...&#x27;</span>)</span><br><span class="line"><span class="attr">name</span>: <span class="string">&#x27;總統套房單人房&#x27;</span></span><br><span class="line"><span class="attr">price</span>: <span class="number">2000</span></span><br><span class="line"><span class="attr">rating</span>: <span class="number">4.5</span></span><br><span class="line"><span class="attr">__v</span>: <span class="number">0</span> </span><br></pre></td></tr></table></figure>
+<h3 id="Mongoose-查詢"><a href="#Mongoose-查詢" class="headerlink" title="Mongoose 查詢"></a>Mongoose 查詢</h3><p>Model instance 可以使用 .find() 查詢 documents</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查詢所有 documents</span></span><br><span class="line"><span class="title class_">Room</span>.<span class="title function_">find</span>(&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 帶入篩選條件</span></span><br><span class="line"><span class="title class_">Room</span>.<span class="title function_">find</span>(&#123; <span class="attr">name</span>: <span class="string">&#x27;總統套房單人房&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
 
-<h3 id="Oracle-匯入資料表語法"><a href="#Oracle-匯入資料表語法" class="headerlink" title="Oracle 匯入資料表語法"></a>Oracle 匯入資料表語法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">imp 帳號/密碼@ServiceName full=y <span class="built_in">log</span>=Log位置 ignore=n file=檔案位置</span><br><span class="line"><span class="comment">#ServiceName=&gt; 服務名稱，NLS服務名稱</span></span><br><span class="line"><span class="comment">#full=&gt; 匯入整個 dmp 檔</span></span><br><span class="line"><span class="comment">#ignore=&gt; Y=若 Table 物件已存在，仍然會匯入資料（即便在匯入途中發生錯誤也不會中斷）</span></span><br></pre></td></tr></table></figure>
+<h3 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h3><p>延續前一天練習的手搖飲 Schema，建立名稱為 Drink 的 Model，並嘗試新增一筆 document</p>
+<p>新增 document 內容如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">product</span>: <span class="string">&#x27;鮮奶茶&#x27;</span>,</span><br><span class="line"><span class="attr">price</span>: <span class="number">55</span>,</span><br><span class="line"><span class="attr">sugar</span>: <span class="string">&#x27;微糖&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>內容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">Drink</span> = mongoose.<span class="title function_">model</span>(<span class="string">&#x27;Drink&#x27;</span>, schema 名稱);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">AddSchema</span> = <span class="keyword">new</span> <span class="title function_">drinkSchema</span>(&#123;</span><br><span class="line">  <span class="comment">/* 新增 document 內容 */</span></span><br><span class="line">    <span class="attr">product</span>: <span class="string">&#x27;鮮奶茶&#x27;</span>,</span><br><span class="line">    <span class="attr">price</span>: <span class="number">55</span>,</span><br><span class="line">    <span class="attr">sugar</span>: <span class="string">&#x27;微糖&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="title class_">AddSchema</span>.<span class="title function_">save</span>()</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;新增資料成功&#x27;</span>)&#125;);</span><br><span class="line">  .<span class="title function_">catch</span>(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(error)&#125;)</span><br><span class="line">  ;</span><br><span class="line"><span class="comment">// 或另一種方式</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Drink</span>.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="comment">/* 新增 document 內容 */</span></span><br><span class="line">    <span class="attr">product</span>: <span class="string">&#x27;鮮奶茶&#x27;</span>,</span><br><span class="line">    <span class="attr">price</span>: <span class="number">55</span>,</span><br><span class="line">    <span class="attr">sugar</span>: <span class="string">&#x27;微糖&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>以上見解，如有錯誤地方還請留言告知，感謝。</p>
 
         <script src="https://utteranc.es/client.js"
         repo="EmptyWu/emptywu.github.io"
@@ -131,16 +151,16 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/03/21/2022-03-21-%E8%B3%87%E6%96%99%E5%BA%AB-Oracle%E8%B3%87%E6%96%99%E5%BA%AB%E5%8C%AF%E5%85%A5%E5%8C%AF%E5%87%BA/" data-id="cl10izn8j0000nwfw4fcs6bgp" data-title="Oracle資料庫匯入匯出" class="article-share-link">Teilen</a>
+      <a data-url="https://blog.heitang.info/2022/04/18/2022-04-18-Day7-model%E3%80%81Mongoose-%E6%96%B0%E5%A2%9E-%E6%9F%A5%E8%A9%A2/" data-id="cl2475hft0000h8fw5ao1fj15" data-title="Day7-model、Mongoose 新增 / 查詢" class="article-share-link">Teilen</a>
       
       
-        <a href="/2022/03/21/2022-03-21-%E8%B3%87%E6%96%99%E5%BA%AB-Oracle%E8%B3%87%E6%96%99%E5%BA%AB%E5%8C%AF%E5%85%A5%E5%8C%AF%E5%87%BA/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/03/21/2022-03-21-%E8%B3%87%E6%96%99%E5%BA%AB-Oracle%E8%B3%87%E6%96%99%E5%BA%AB%E5%8C%AF%E5%85%A5%E5%8C%AF%E5%87%BA/" itemprop="commentCount"></span>
+        <a href="/2022/04/18/2022-04-18-Day7-model%E3%80%81Mongoose-%E6%96%B0%E5%A2%9E-%E6%9F%A5%E8%A9%A2/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/04/18/2022-04-18-Day7-model%E3%80%81Mongoose-%E6%96%B0%E5%A2%9E-%E6%9F%A5%E8%A9%A2/" itemprop="commentCount"></span>
           Kommentare
         </a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/exp/" rel="tag">exp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/imp/" rel="tag">imp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/" rel="tag">資料庫</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongoose/" rel="tag">Mongoose</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Schema/" rel="tag">Schema</a></li></ul>
 
     </footer>
   </div>
@@ -148,19 +168,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/04/11/2022-04-08-Day1-%E9%9D%9E%E5%90%8C%E6%AD%A5%E6%A6%82%E5%BF%B5%E3%80%81%E5%BB%BA%E7%AB%8B-Promise/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
-      <div class="article-nav-title">
-        
-          Day1-非同步概念、建立 Promise
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/03/14/2022-03-14-md-MarkDown%E8%AA%9E%E6%B3%95%E6%95%99%E5%AD%B8/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/04/15/2022-04-15-windows-VSCode%E5%A2%9E%E5%8A%A0%E5%88%B0%E5%8F%B3%E9%8D%B5%E5%BF%AB%E6%8D%B7%E8%8F%9C%E5%96%AE%E4%B8%AD/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">MarkDown語法教學</div>
+      <div class="article-nav-title">windows-VSCode增加到右鍵快捷菜單中</div>
     </a>
   
 </nav>
