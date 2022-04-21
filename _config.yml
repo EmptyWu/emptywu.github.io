@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Empty's Blog
-subtitle: ''
-description: ''
-keywords:
-author: Empty Wu
-language: zh-TW
-timezone: ''
+title: 只剩下腦袋還存在，其他都是假的。
+subtitle: '程式好難，人生好難，那就下輩子在寫!'
+description: '為了自己紀錄的地方，毫無文筆可言，只是怕自己忘記自己。'
+keywords: [code,C#,.Net,PostgreSQL,hexo,資料庫,Vue]
+author: Empty
+language: 'tw'
+timezone: 'Asia/Taipei'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'

@@ -2,7 +2,7 @@
 menu:
   Home: /
   Archives: /archives
-rss: /atom.xml
+rss: 
 banner: "images/2019-04-03 10-41-59.jpeg"
 
 # Content
@@ -15,7 +15,7 @@ fancybox: true
 #   All website licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></br>
 
 # Footer
-copyright:
+copyright: 
 # Need help choosing? Please see...
 # https://creativecommons.org/choose/
 # https://choosealicense.com/
