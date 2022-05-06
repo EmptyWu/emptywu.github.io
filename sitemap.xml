@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.heitang.info/2022/05/07/2022-04-28-Day15-req-body/</loc>
+    
+    <lastmod>2022-05-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.heitang.info/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/</loc>
     
     <lastmod>2022-05-06</lastmod>
