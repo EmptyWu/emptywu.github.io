@@ -91,6 +91,450 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2022-05-10-Day06-每日JS任務-if流程判斷II" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/10/2022-05-10-Day06-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7II/" class="article-date">
+  <time class="dt-published" datetime="2022-05-10T13:43:40.000Z" itemprop="datePublished">2022-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/10/2022-05-10-Day06-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7II/">Day05-每日JS任務-if 流程判斷 II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h3><h3 id="題目一：日幣計算機-1-0-32"><a href="#題目一：日幣計算機-1-0-32" class="headerlink" title="題目一：日幣計算機 (1:0.32)"></a>題目一：日幣計算機 (1:0.32)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">TWDtoJPY</span>(<span class="params">d</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">typeof</span>(d)===<span class="string">&#x27;string&#x27;</span>?<span class="string">`當我看不懂字串？？`</span>:d&lt;<span class="number">0</span>?<span class="string">`...沒錢別來亂`</span>:<span class="string">`你換到的日幣有：<span class="subst">$&#123;<span class="built_in">Math</span>.round(d/<span class="number">0.23</span>)&#125;</span>`</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// input 輸入</span></span><br><span class="line"><span class="title class_">TWDtoJPY</span>(-<span class="number">1</span>)</span><br><span class="line"><span class="title class_">TWDtoJPY</span>(<span class="string">&quot;hi~&quot;</span>)</span><br><span class="line"><span class="title class_">TWDtoJPY</span>(<span class="number">2000</span>)</span><br><span class="line"><span class="title class_">TWDtoJPY</span>(<span class="number">320</span>)</span><br><span class="line"><span class="comment">// output 輸出</span></span><br><span class="line"><span class="string">&quot;...沒錢別來亂&quot;</span></span><br><span class="line"><span class="string">&quot;當我看不懂字串？？&quot;</span></span><br><span class="line"><span class="string">&quot;你換到的日幣有：6250&quot;</span></span><br><span class="line"><span class="string">&quot;你換到的日幣有：1000&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2022/05/10/2022-05-10-Day06-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7II/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2022/05/10/2022-05-10-Day06-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7II/" data-id="cl30877n3000f4gvghsz5esq7" data-title="Day05-每日JS任務-if 流程判斷 II" class="article-share-link">Teilen</a>
+      
+      
+        <a href="/2022/05/10/2022-05-10-Day06-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7II/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/10/2022-05-10-Day06-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7II/" itemprop="commentCount"></span>
+          Kommentare
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-05-09-Day05-每日JS任務-if流程判斷I" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/10/2022-05-09-Day05-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7I/" class="article-date">
+  <time class="dt-published" datetime="2022-05-10T13:18:11.000Z" itemprop="datePublished">2022-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/10/2022-05-09-Day05-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7I/">Day05-每日JS任務-if 流程判斷 I</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h3><h3 id="題目一：成年計算機"><a href="#題目一：成年計算機" class="headerlink" title="題目一：成年計算機"></a>題目一：成年計算機</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">checkAdult</span>(<span class="params">num</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> num&gt;<span class="number">18</span>?<span class="string">&quot;成年&quot;</span>:<span class="string">&quot;未成年&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// input 輸入</span></span><br><span class="line"><span class="title function_">checkAdult</span>(<span class="number">20</span>)</span><br><span class="line"><span class="title function_">checkAdult</span>(<span class="number">12</span>)</span><br><span class="line"><span class="title function_">checkAdult</span>(<span class="number">33</span>)</span><br><span class="line"><span class="title function_">checkAdult</span>(<span class="number">18</span>)</span><br><span class="line"><span class="comment">// output 輸出</span></span><br><span class="line"><span class="string">&quot;成年&quot;</span></span><br><span class="line"><span class="string">&quot;未成年&quot;</span></span><br><span class="line"><span class="string">&quot;成年&quot;</span></span><br><span class="line"><span class="string">&quot;未成年&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="題目二：法定性行為年紀計算機-16歲"><a href="#題目二：法定性行為年紀計算機-16歲" class="headerlink" title="題目二：法定性行為年紀計算機(16歲)"></a>題目二：法定性行為年紀計算機(16歲)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">checkAdult</span>(<span class="params">num,sex</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> (num&gt;=<span class="number">16</span>)?<span class="string">&quot;可以色色&quot;</span>:<span class="string">&quot;你還不行哦~&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// input 輸入</span></span><br><span class="line"><span class="title function_">canSex</span>(<span class="number">16</span>,<span class="string">&quot;male&quot;</span>)</span><br><span class="line"><span class="title function_">canSex</span>(<span class="number">14</span>,<span class="string">&quot;female&quot;</span>)</span><br><span class="line"><span class="title function_">canSex</span>(<span class="number">20</span>,<span class="string">&quot;female&quot;</span>)</span><br><span class="line"><span class="comment">// output 輸出</span></span><br><span class="line"><span class="string">&quot;可以色色&quot;</span></span><br><span class="line"><span class="string">&quot;你還不行哦~&quot;</span></span><br><span class="line"><span class="string">&quot;可以色色&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="題目三：滿-300-即可符合優惠條件，能使用-50-元折價券"><a href="#題目三：滿-300-即可符合優惠條件，能使用-50-元折價券" class="headerlink" title="題目三：滿 300 即可符合優惠條件，能使用 50 元折價券"></a>題目三：滿 300 即可符合優惠條件，能使用 50 元折價券</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">buy</span>(<span class="params">num</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(num &gt;=<span class="number">400</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`符合優惠券資格，費用是 <span class="subst">$&#123;num-<span class="number">50</span>&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(num &gt;=<span class="number">300</span> &amp;&amp; num &lt;<span class="number">400</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`剛好符合資格，費用是 <span class="subst">$&#123;num-<span class="number">50</span>&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(num &gt;<span class="number">0</span> &amp;&amp; num &lt;<span class="number">300</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`不優惠券資格，費用是 <span class="subst">$&#123;num&#125;</span>`</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>( num ===<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`...你來亂的嗎？`</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>( num &lt;<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`再鬧我就生氣了哦~`</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// input 輸入</span></span><br><span class="line"><span class="title function_">buy</span>(<span class="number">450</span>)</span><br><span class="line"><span class="title function_">buy</span>(<span class="number">299</span>)</span><br><span class="line"><span class="title function_">buy</span>(<span class="number">0</span>)</span><br><span class="line"><span class="title function_">buy</span>(-<span class="number">30</span>)</span><br><span class="line"><span class="title function_">buy</span>(<span class="number">300</span>)</span><br><span class="line"><span class="title function_">buy</span>(<span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// output 輸出</span></span><br><span class="line"><span class="string">&quot;符合優惠券資格，費用是 400&quot;</span></span><br><span class="line"><span class="string">&quot;不優惠券資格，費用是 299&quot;</span></span><br><span class="line"><span class="string">&quot;...你來亂的嗎？&quot;</span></span><br><span class="line"><span class="string">&quot;再鬧我就生氣了哦~&quot;</span></span><br><span class="line"><span class="string">&quot;剛好符合資格，費用是 250&quot;</span></span><br><span class="line"><span class="string">&quot;符合優惠券資格，費用是 950&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="進階題，不適合新手"><a href="#進階題，不適合新手" class="headerlink" title="進階題，不適合新手"></a>進階題，不適合新手</h2><h3 id="是否為質數"><a href="#是否為質數" class="headerlink" title="是否為質數"></a>是否為質數</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">isPrime</span>(<span class="params">num</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(num &gt;=<span class="number">100</span>)</span><br><span class="line">    &#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="string">&quot;我只能算 100 以內的質數計算，原諒我QQ&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(num &gt;<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> t = <span class="built_in">parseInt</span>(<span class="title class_">Math</span>.<span class="title function_">sqrt</span>(num));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">2</span>; i &lt;= t; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num % i == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="string">&quot;不是質數&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;是質數&quot;</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;無法判別&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// input 輸入</span></span><br><span class="line"><span class="title function_">isPrime</span>(<span class="number">29</span>)</span><br><span class="line"><span class="title function_">isPrime</span>(<span class="number">17</span>)</span><br><span class="line"><span class="title function_">isPrime</span>(-<span class="number">3</span>)</span><br><span class="line"><span class="title function_">isPrime</span>(<span class="number">288</span>)</span><br><span class="line"><span class="title function_">isPrime</span>(<span class="number">97</span>)</span><br><span class="line"><span class="title function_">isPrime</span>(<span class="number">6</span>)</span><br><span class="line"><span class="comment">// output 輸出</span></span><br><span class="line"><span class="string">&quot;是質數&quot;</span></span><br><span class="line"><span class="string">&quot;是質數&quot;</span></span><br><span class="line"><span class="string">&quot;無法判別&quot;</span></span><br><span class="line"><span class="string">&quot;我只能算 100 以內的質數計算，原諒我QQ&quot;</span></span><br><span class="line"><span class="string">&quot;是質數&quot;</span></span><br><span class="line"><span class="string">&quot;不是質數&quot;</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2022/05/10/2022-05-09-Day05-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7I/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2022/05/10/2022-05-09-Day05-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7I/" data-id="cl30877n0000a4gvg1teveypg" data-title="Day05-每日JS任務-if 流程判斷 I" class="article-share-link">Teilen</a>
+      
+      
+        <a href="/2022/05/10/2022-05-09-Day05-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7I/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/10/2022-05-09-Day05-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7I/" itemprop="commentCount"></span>
+          Kommentare
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-05-05-Day03-每日JS任務-字串設計" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/10/2022-05-05-Day03-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E8%A8%AD%E8%A8%88/" class="article-date">
+  <time class="dt-published" datetime="2022-05-10T13:05:05.000Z" itemprop="datePublished">2022-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/10/2022-05-05-Day03-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E8%A8%AD%E8%A8%88/">Day03-每日JS任務-字串設計</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h3><h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/js/js_string_methods.asp">JavaScript 字符串方法</a></li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2022/05/10/2022-05-05-Day03-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E8%A8%AD%E8%A8%88/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2022/05/10/2022-05-05-Day03-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E8%A8%AD%E8%A8%88/" data-id="cl30877mi00004gvgeaiydfi7" data-title="Day03-每日JS任務-字串設計" class="article-share-link">Teilen</a>
+      
+      
+        <a href="/2022/05/10/2022-05-05-Day03-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E8%A8%AD%E8%A8%88/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/10/2022-05-05-Day03-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E8%A8%AD%E8%A8%88/" itemprop="commentCount"></span>
+          Kommentare
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-05-06-Day04-每日JS任務-比較與邏輯運算子" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/10/2022-05-06-Day04-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%AF%94%E8%BC%83%E8%88%87%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90/" class="article-date">
+  <time class="dt-published" datetime="2022-05-10T13:05:05.000Z" itemprop="datePublished">2022-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/10/2022-05-06-Day04-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%AF%94%E8%BC%83%E8%88%87%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90/">Day04-每日JS任務-比較與邏輯運算子</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h3><h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Expressions_and_Operators">MDN：運算式與運算子</a></li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2022/05/10/2022-05-06-Day04-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%AF%94%E8%BC%83%E8%88%87%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2022/05/10/2022-05-06-Day04-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%AF%94%E8%BC%83%E8%88%87%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90/" data-id="cl30877mx00064gvg44ew4y89" data-title="Day04-每日JS任務-比較與邏輯運算子" class="article-share-link">Teilen</a>
+      
+      
+        <a href="/2022/05/10/2022-05-06-Day04-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%AF%94%E8%BC%83%E8%88%87%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/10/2022-05-06-Day04-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%AF%94%E8%BC%83%E8%88%87%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90/" itemprop="commentCount"></span>
+          Kommentare
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-05-04-Day02-每日JS任務-數字處理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/10/2022-05-04-Day02-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%95%B8%E5%AD%97%E8%99%95%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2022-05-10T12:55:47.000Z" itemprop="datePublished">2022-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/10/2022-05-04-Day02-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%95%B8%E5%AD%97%E8%99%95%E7%90%86/">Day02-每日JS任務-數字處理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h2><h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/js/js_number_methods.asp">JavaScript 數字方法</a>
+        
+          <p class="article-more-link">
+            <a href="/2022/05/10/2022-05-04-Day02-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%95%B8%E5%AD%97%E8%99%95%E7%90%86/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2022/05/10/2022-05-04-Day02-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%95%B8%E5%AD%97%E8%99%95%E7%90%86/" data-id="cl30877mw00044gvggl7061mc" data-title="Day02-每日JS任務-數字處理" class="article-share-link">Teilen</a>
+      
+      
+        <a href="/2022/05/10/2022-05-04-Day02-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%95%B8%E5%AD%97%E8%99%95%E7%90%86/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/10/2022-05-04-Day02-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%95%B8%E5%AD%97%E8%99%95%E7%90%86/" itemprop="commentCount"></span>
+          Kommentare
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-05-03-Day01-每日JS任務-字串、數字相加" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/10/2022-05-03-Day01-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E3%80%81%E6%95%B8%E5%AD%97%E7%9B%B8%E5%8A%A0/" class="article-date">
+  <time class="dt-published" datetime="2022-05-10T12:44:16.000Z" itemprop="datePublished">2022-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/10/2022-05-03-Day01-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E3%80%81%E6%95%B8%E5%AD%97%E7%9B%B8%E5%8A%A0/">Day01-每日JS任務-字串、數字相加</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h2><h3 id="題目一：hello-world！"><a href="#題目一：hello-world！" class="headerlink" title="題目一：hello world！"></a>題目一：hello world！</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Hello world！&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// input 輸入</span></span><br><span class="line"><span class="title function_">hello</span>()</span><br><span class="line"><span class="title function_">hello</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// output 輸出</span></span><br><span class="line"><span class="string">&quot;Hello world！&quot;</span></span><br><span class="line"><span class="string">&quot;Hello world！&quot;</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2022/05/10/2022-05-03-Day01-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E3%80%81%E6%95%B8%E5%AD%97%E7%9B%B8%E5%8A%A0/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2022/05/10/2022-05-03-Day01-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E3%80%81%E6%95%B8%E5%AD%97%E7%9B%B8%E5%8A%A0/" data-id="cl30877mm00014gvgc802enkd" data-title="Day01-每日JS任務-字串、數字相加" class="article-share-link">Teilen</a>
+      
+      
+        <a href="/2022/05/10/2022-05-03-Day01-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E3%80%81%E6%95%B8%E5%AD%97%E7%9B%B8%E5%8A%A0/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/10/2022-05-03-Day01-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E3%80%81%E6%95%B8%E5%AD%97%E7%9B%B8%E5%8A%A0/" itemprop="commentCount"></span>
+          Kommentare
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-05-10-Day22-express-自訂錯誤訊息" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/10/2022-05-10-Day22-express-%E8%87%AA%E8%A8%82%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/" class="article-date">
+  <time class="dt-published" datetime="2022-05-10T12:27:47.000Z" itemprop="datePublished">2022-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/10/2022-05-10-Day22-express-%E8%87%AA%E8%A8%82%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/">Day22-express-自訂錯誤訊息</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我們可以另外新增自定義錯誤訊息的模組，在預期使用者可能會出錯的地方驗證錯誤</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/05/10/2022-05-10-Day22-express-%E8%87%AA%E8%A8%82%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2022/05/10/2022-05-10-Day22-express-%E8%87%AA%E8%A8%82%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/" data-id="cl30877ne000q4gvg137f3yaa" data-title="Day22-express-自訂錯誤訊息" class="article-share-link">Teilen</a>
+      
+      
+        <a href="/2022/05/10/2022-05-10-Day22-express-%E8%87%AA%E8%A8%82%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/10/2022-05-10-Day22-express-%E8%87%AA%E8%A8%82%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/" itemprop="commentCount"></span>
+          Kommentare
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-05-09-Day21-uncaughtException與unhandledRejection" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/10/2022-05-09-Day21-uncaughtException%E8%88%87unhandledRejection/" class="article-date">
+  <time class="dt-published" datetime="2022-05-10T12:23:38.000Z" itemprop="datePublished">2022-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/10/2022-05-09-Day21-uncaughtException%E8%88%87unhandledRejection/">Day21-uncaughtException與unhandledRejection</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在設計程式時也有可能會有開發者程式沒寫好、沒考慮到的部分，這時可能就因此出現不可預期的錯誤，因此在 Node.js，運行程式出錯時，若是同步的程式就會出現 uncaughtException，非同步程式則會出現 unhandledRejection</p>
+<p>同步的錯誤例如：app.js 中有出現未宣告過的變數 test<br>非同步錯誤例如：某 async function 中，未使用到 await，或遠端資料庫連線失敗 （若未使用 catch 接錯誤就會發生 unhandledRejection）</p>
+<p>在事件發生時，將錯誤記錄於 server，並在處理後離開此 process</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/05/10/2022-05-09-Day21-uncaughtException%E8%88%87unhandledRejection/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2022/05/10/2022-05-09-Day21-uncaughtException%E8%88%87unhandledRejection/" data-id="cl30877n2000b4gvgcec2eo7a" data-title="Day21-uncaughtException與unhandledRejection" class="article-share-link">Teilen</a>
+      
+      
+        <a href="/2022/05/10/2022-05-09-Day21-uncaughtException%E8%88%87unhandledRejection/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/10/2022-05-09-Day21-uncaughtException%E8%88%87unhandledRejection/" itemprop="commentCount"></span>
+          Kommentare
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2022-05-06-Day20-HTTP狀態碼" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/" class="article-date">
@@ -109,7 +553,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/">2022-05-06-Day20-HTTP狀態碼</a>
+      <a class="p-name article-title" href="/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/">Day20-HTTP狀態碼</a>
     </h1>
   
 
@@ -126,7 +570,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/" data-id="cl2usp3m9000ehsvg542h7q7z" data-title="2022-05-06-Day20-HTTP狀態碼" class="article-share-link">Teilen</a>
+      <a data-url="https://blog.heitang.info/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/" data-id="cl2usp3m9000ehsvg542h7q7z" data-title="Day20-HTTP狀態碼" class="article-share-link">Teilen</a>
       
       
         <a href="/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/#comments" class="article-comment-link">
@@ -199,438 +643,6 @@
 
 
   
-    <article id="post-2022-05-04-Day18-取得資料搭配sort與limit" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/07/2022-05-04-Day18-%E5%8F%96%E5%BE%97%E8%B3%87%E6%96%99%E6%90%AD%E9%85%8Dsort%E8%88%87limit/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T18:30:05.000Z" itemprop="datePublished">2022-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%B3%87%E6%96%99%E5%BA%AB/">資料庫</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/07/2022-05-04-Day18-%E5%8F%96%E5%BE%97%E8%B3%87%E6%96%99%E6%90%AD%E9%85%8Dsort%E8%88%87limit/">Day18-取得資料搭配 sort()、limit()</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mongoose 的 sort() 可使用物件寫法</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/05/07/2022-05-04-Day18-%E5%8F%96%E5%BE%97%E8%B3%87%E6%96%99%E6%90%AD%E9%85%8Dsort%E8%88%87limit/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/05/07/2022-05-04-Day18-%E5%8F%96%E5%BE%97%E8%B3%87%E6%96%99%E6%90%AD%E9%85%8Dsort%E8%88%87limit/" data-id="cl2usp3m8000bhsvga2wpbydx" data-title="Day18-取得資料搭配 sort()、limit()" class="article-share-link">Teilen</a>
-      
-      
-        <a href="/2022/05/07/2022-05-04-Day18-%E5%8F%96%E5%BE%97%E8%B3%87%E6%96%99%E6%90%AD%E9%85%8Dsort%E8%88%87limit/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/07/2022-05-04-Day18-%E5%8F%96%E5%BE%97%E8%B3%87%E6%96%99%E6%90%AD%E9%85%8Dsort%E8%88%87limit/" itemprop="commentCount"></span>
-          Kommentare
-        </a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongoose/" rel="tag">Mongoose</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Schema/" rel="tag">Schema</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2022-05-03-Day17-Mongoose-Populate" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/07/2022-05-03-Day17-Mongoose-Populate/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T18:20:44.000Z" itemprop="datePublished">2022-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E8%B3%87%E6%96%99%E5%BA%AB/">資料庫</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/07/2022-05-03-Day17-Mongoose-Populate/">Day17-Mongoose-Populate</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mongoose 有提供 populate() 方法，可以將其他 collection 的資料關聯到目前在操作的 collection</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/05/07/2022-05-03-Day17-Mongoose-Populate/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/05/07/2022-05-03-Day17-Mongoose-Populate/" data-id="cl2usp3m70008hsvg464l2k4z" data-title="Day17-Mongoose-Populate" class="article-share-link">Teilen</a>
-      
-      
-        <a href="/2022/05/07/2022-05-03-Day17-Mongoose-Populate/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/07/2022-05-03-Day17-Mongoose-Populate/" itemprop="commentCount"></span>
-          Kommentare
-        </a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mongoose/" rel="tag">Mongoose</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Schema/" rel="tag">Schema</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2022-04-29-Day16-req-params取得特定資料" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/07/2022-04-29-Day16-req-params%E5%8F%96%E5%BE%97%E7%89%B9%E5%AE%9A%E8%B3%87%E6%96%99/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T18:06:56.000Z" itemprop="datePublished">2022-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/07/2022-04-29-Day16-req-params%E5%8F%96%E5%BE%97%E7%89%B9%E5%AE%9A%E8%B3%87%E6%96%99/">Day16-req.params取得特定資料</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>接續前面，請參考如下</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/05/07/2022-04-29-Day16-req-params%E5%8F%96%E5%BE%97%E7%89%B9%E5%AE%9A%E8%B3%87%E6%96%99/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/05/07/2022-04-29-Day16-req-params%E5%8F%96%E5%BE%97%E7%89%B9%E5%AE%9A%E8%B3%87%E6%96%99/" data-id="cl2usp3m60005hsvgbm4ock0u" data-title="Day16-req.params取得特定資料" class="article-share-link">Teilen</a>
-      
-      
-        <a href="/2022/05/07/2022-04-29-Day16-req-params%E5%8F%96%E5%BE%97%E7%89%B9%E5%AE%9A%E8%B3%87%E6%96%99/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/07/2022-04-29-Day16-req-params%E5%8F%96%E5%BE%97%E7%89%B9%E5%AE%9A%E8%B3%87%E6%96%99/" itemprop="commentCount"></span>
-          Kommentare
-        </a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2022-04-28-Day15-req-body" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/07/2022-04-28-Day15-req-body/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T18:02:20.000Z" itemprop="datePublished">2022-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/07/2022-04-28-Day15-req-body/">Day15-req.body</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>若客戶端請求有 request body，可使用 req.body 取得 request body 的 key: value 資料</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/05/07/2022-04-28-Day15-req-body/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/05/07/2022-04-28-Day15-req-body/" data-id="cl2usqbtn0000mkvg4ntle4ca" data-title="Day15-req.body" class="article-share-link">Teilen</a>
-      
-      
-        <a href="/2022/05/07/2022-04-28-Day15-req-body/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/07/2022-04-28-Day15-req-body/" itemprop="commentCount"></span>
-          Kommentare
-        </a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2022-04-27-Day14-req-query篩選網址參數" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/07/2022-04-27-Day14-req-query%E7%AF%A9%E9%81%B8%E7%B6%B2%E5%9D%80%E5%8F%83%E6%95%B8/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T17:57:59.000Z" itemprop="datePublished">2022-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/07/2022-04-27-Day14-req-query%E7%AF%A9%E9%81%B8%E7%B6%B2%E5%9D%80%E5%8F%83%E6%95%B8/">Day14-req.query篩選網址參數</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>先前使用 <code>req.params</code> 取得動態路由外，也可在 url 帶入相關資訊，再使用 <code>req.query</code> 取出網址列的參數</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/05/07/2022-04-27-Day14-req-query%E7%AF%A9%E9%81%B8%E7%B6%B2%E5%9D%80%E5%8F%83%E6%95%B8/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/05/07/2022-04-27-Day14-req-query%E7%AF%A9%E9%81%B8%E7%B6%B2%E5%9D%80%E5%8F%83%E6%95%B8/" data-id="cl2usp3m50003hsvga76e4ib8" data-title="Day14-req.query篩選網址參數" class="article-share-link">Teilen</a>
-      
-      
-        <a href="/2022/05/07/2022-04-27-Day14-req-query%E7%AF%A9%E9%81%B8%E7%B6%B2%E5%9D%80%E5%8F%83%E6%95%B8/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/07/2022-04-27-Day14-req-query%E7%AF%A9%E9%81%B8%E7%B6%B2%E5%9D%80%E5%8F%83%E6%95%B8/" itemprop="commentCount"></span>
-          Kommentare
-        </a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2022-04-26-Day13-在 routes 設計路由" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/07/2022-04-26-Day13-%E5%9C%A8%20routes%20%E8%A8%AD%E8%A8%88%E8%B7%AF%E7%94%B1/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T17:42:34.000Z" itemprop="datePublished">2022-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/07/2022-04-26-Day13-%E5%9C%A8%20routes%20%E8%A8%AD%E8%A8%88%E8%B7%AF%E7%94%B1/">Day13-Express 應用程式產生器（Express generater）、在 routes 設計路由</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>express 應用程式產生器可以快速產生一個應用程式架構</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/05/07/2022-04-26-Day13-%E5%9C%A8%20routes%20%E8%A8%AD%E8%A8%88%E8%B7%AF%E7%94%B1/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/05/07/2022-04-26-Day13-%E5%9C%A8%20routes%20%E8%A8%AD%E8%A8%88%E8%B7%AF%E7%94%B1/" data-id="cl2usp3lp0000hsvg96nkgb5i" data-title="Day13-Express 應用程式產生器（Express generater）、在 routes 設計路由" class="article-share-link">Teilen</a>
-      
-      
-        <a href="/2022/05/07/2022-04-26-Day13-%E5%9C%A8%20routes%20%E8%A8%AD%E8%A8%88%E8%B7%AF%E7%94%B1/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/07/2022-04-26-Day13-%E5%9C%A8%20routes%20%E8%A8%AD%E8%A8%88%E8%B7%AF%E7%94%B1/" itemprop="commentCount"></span>
-          Kommentare
-        </a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2022-04-25-Day12-設計基本路由" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/07/2022-04-25-Day12-%E8%A8%AD%E8%A8%88%E5%9F%BA%E6%9C%AC%E8%B7%AF%E7%94%B1/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T17:42:34.000Z" itemprop="datePublished">2022-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/07/2022-04-25-Day12-%E8%A8%AD%E8%A8%88%E5%9F%BA%E6%9C%AC%E8%B7%AF%E7%94%B1/">Day12-設計基本路由</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>延續，我們設定當造訪根目錄 ‘&#x2F;‘時，會回傳 Hello World，接著可以此類推，設定當造訪其他頁面的路由（router）</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/05/07/2022-04-25-Day12-%E8%A8%AD%E8%A8%88%E5%9F%BA%E6%9C%AC%E8%B7%AF%E7%94%B1/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/05/07/2022-04-25-Day12-%E8%A8%AD%E8%A8%88%E5%9F%BA%E6%9C%AC%E8%B7%AF%E7%94%B1/" data-id="cl2usp3m20001hsvgb4w78dpw" data-title="Day12-設計基本路由" class="article-share-link">Teilen</a>
-      
-      
-        <a href="/2022/05/07/2022-04-25-Day12-%E8%A8%AD%E8%A8%88%E5%9F%BA%E6%9C%AC%E8%B7%AF%E7%94%B1/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/07/2022-04-25-Day12-%E8%A8%AD%E8%A8%88%E5%9F%BA%E6%9C%AC%E8%B7%AF%E7%94%B1/" itemprop="commentCount"></span>
-          Kommentare
-        </a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2022-04-22-Day11-Express" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/22/2022-04-22-Day11-Express/" class="article-date">
-  <time class="dt-published" datetime="2022-04-22T02:09:14.000Z" itemprop="datePublished">2022-04-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/22/2022-04-22-Day11-Express/">Day11-Express</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Express 是一個 Node.js 的 web 框架，接下來我們會使用它來實作 API，回傳 JSON 給前端使用</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/04/22/2022-04-22-Day11-Express/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/04/22/2022-04-22-Day11-Express/" data-id="cl2rs3hz30003rkvg83zg0j6q" data-title="Day11-Express" class="article-share-link">Teilen</a>
-      
-      
-        <a href="/2022/04/22/2022-04-22-Day11-Express/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/04/22/2022-04-22-Day11-Express/" itemprop="commentCount"></span>
-          Kommentare
-        </a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -646,7 +658,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MarkDown/">MarkDown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%95%86%E6%A5%AD/">商業</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%B8%E7%BF%92/">學習</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B3%87%E6%96%99%E5%BA%AB/">資料庫</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C#</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MarkDown/">MarkDown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node-js/">Node.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Windows/">Windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%95%86%E6%A5%AD/">商業</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%B8%E7%BF%92/">學習</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%B3%87%E6%96%99%E5%BA%AB/">資料庫</a></li></ul>
     </div>
   </div>
 
@@ -666,7 +678,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Net/" style="font-size: 10px;">.Net</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Express/" style="font-size: 16.67px;">Express</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Honeygain/" style="font-size: 10px;">Honeygain</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/MongoDB/" style="font-size: 18.33px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 15px;">Mongoose</a> <a href="/tags/Node-js/" style="font-size: 16.67px;">Node.js</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Promise/" style="font-size: 11.67px;">Promise</a> <a href="/tags/Schema/" style="font-size: 15px;">Schema</a> <a href="/tags/VSCode/" style="font-size: 10px;">VSCode</a> <a href="/tags/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD/" style="font-size: 10px;">Vue直播班</a> <a href="/tags/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD-2022%E6%98%A5%E5%AD%A3%E7%8F%AD/" style="font-size: 10px;">Vue直播班-2022春季班</a> <a href="/tags/Win10/" style="font-size: 10px;">Win10</a> <a href="/tags/Windows/" style="font-size: 13.33px;">Windows</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/await/" style="font-size: 10px;">await</a> <a href="/tags/delete/" style="font-size: 10px;">delete</a> <a href="/tags/exp/" style="font-size: 10px;">exp</a> <a href="/tags/imp/" style="font-size: 10px;">imp</a> <a href="/tags/insert/" style="font-size: 10px;">insert</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/md/" style="font-size: 10px;">md</a> <a href="/tags/oneptp/" style="font-size: 10px;">oneptp</a> <a href="/tags/otohits-net/" style="font-size: 10px;">otohits.net</a> <a href="/tags/query/" style="font-size: 10px;">query</a> <a href="/tags/update/" style="font-size: 10px;">update</a> <a href="/tags/%E5%85%AD%E8%A7%92%E5%AD%B8%E9%99%A2/" style="font-size: 10px;">六角學院</a> <a href="/tags/%E5%8F%B3%E9%8D%B5%E8%8F%9C%E5%96%AE/" style="font-size: 10px;">右鍵菜單</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" style="font-size: 10px;">工具分享</a> <a href="/tags/%E6%89%B9%E6%AC%A1%E6%AA%94/" style="font-size: 10px;">批次檔</a> <a href="/tags/%E6%8C%87%E4%BB%A4/" style="font-size: 10px;">指令</a> <a href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E4%BA%AB/" style="font-size: 11.67px;">流量分享</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/" style="font-size: 13.33px;">網路賺錢</a> <a href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/" style="font-size: 10px;">資料庫</a> <a href="/tags/%E9%97%9C%E6%A9%9F/" style="font-size: 10px;">關機</a>
+      <a href="/tags/Net/" style="font-size: 10px;">.Net</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Express/" style="font-size: 18.33px;">Express</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Honeygain/" style="font-size: 10px;">Honeygain</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/MongoDB/" style="font-size: 16.67px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 15px;">Mongoose</a> <a href="/tags/Node-js/" style="font-size: 18.33px;">Node.js</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Promise/" style="font-size: 11.67px;">Promise</a> <a href="/tags/Schema/" style="font-size: 15px;">Schema</a> <a href="/tags/VSCode/" style="font-size: 10px;">VSCode</a> <a href="/tags/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD/" style="font-size: 10px;">Vue直播班</a> <a href="/tags/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD-2022%E6%98%A5%E5%AD%A3%E7%8F%AD/" style="font-size: 10px;">Vue直播班-2022春季班</a> <a href="/tags/Win10/" style="font-size: 10px;">Win10</a> <a href="/tags/Windows/" style="font-size: 13.33px;">Windows</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/await/" style="font-size: 10px;">await</a> <a href="/tags/delete/" style="font-size: 10px;">delete</a> <a href="/tags/exp/" style="font-size: 10px;">exp</a> <a href="/tags/imp/" style="font-size: 10px;">imp</a> <a href="/tags/insert/" style="font-size: 10px;">insert</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/md/" style="font-size: 10px;">md</a> <a href="/tags/oneptp/" style="font-size: 10px;">oneptp</a> <a href="/tags/otohits-net/" style="font-size: 10px;">otohits.net</a> <a href="/tags/query/" style="font-size: 10px;">query</a> <a href="/tags/update/" style="font-size: 10px;">update</a> <a href="/tags/%E5%85%AD%E8%A7%92%E5%AD%B8%E9%99%A2/" style="font-size: 10px;">六角學院</a> <a href="/tags/%E5%8F%B3%E9%8D%B5%E8%8F%9C%E5%96%AE/" style="font-size: 10px;">右鍵菜單</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" style="font-size: 10px;">工具分享</a> <a href="/tags/%E6%89%B9%E6%AC%A1%E6%AA%94/" style="font-size: 10px;">批次檔</a> <a href="/tags/%E6%8C%87%E4%BB%A4/" style="font-size: 10px;">指令</a> <a href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E4%BA%AB/" style="font-size: 11.67px;">流量分享</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/" style="font-size: 13.33px;">網路賺錢</a> <a href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/" style="font-size: 10px;">資料庫</a> <a href="/tags/%E9%97%9C%E6%A9%9F/" style="font-size: 10px;">關機</a>
     </div>
   </div>
 
@@ -688,23 +700,23 @@
       <ul>
         
           <li>
-            <a href="/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/">2022-05-06-Day20-HTTP狀態碼</a>
+            <a href="/2022/05/10/2022-05-10-Day06-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7II/">Day05-每日JS任務-if 流程判斷 II</a>
           </li>
         
           <li>
-            <a href="/2022/05/07/2022-05-05-Day19-Middleware/">Day19-Middleware</a>
+            <a href="/2022/05/10/2022-05-09-Day05-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7I/">Day05-每日JS任務-if 流程判斷 I</a>
           </li>
         
           <li>
-            <a href="/2022/05/07/2022-05-04-Day18-%E5%8F%96%E5%BE%97%E8%B3%87%E6%96%99%E6%90%AD%E9%85%8Dsort%E8%88%87limit/">Day18-取得資料搭配 sort()、limit()</a>
+            <a href="/2022/05/10/2022-05-05-Day03-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E8%A8%AD%E8%A8%88/">Day03-每日JS任務-字串設計</a>
           </li>
         
           <li>
-            <a href="/2022/05/07/2022-05-03-Day17-Mongoose-Populate/">Day17-Mongoose-Populate</a>
+            <a href="/2022/05/10/2022-05-06-Day04-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%AF%94%E8%BC%83%E8%88%87%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90/">Day04-每日JS任務-比較與邏輯運算子</a>
           </li>
         
           <li>
-            <a href="/2022/05/07/2022-04-29-Day16-req-params%E5%8F%96%E5%BE%97%E7%89%B9%E5%AE%9A%E8%B3%87%E6%96%99/">Day16-req.params取得特定資料</a>
+            <a href="/2022/05/10/2022-05-04-Day02-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%95%B8%E5%AD%97%E8%99%95%E7%90%86/">Day02-每日JS任務-數字處理</a>
           </li>
         
       </ul>
