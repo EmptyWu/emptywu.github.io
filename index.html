@@ -91,6 +91,122 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-2022-05-11-Day07-每日JS任務-if流程判斷III" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/10/2022-05-11-Day07-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7III/" class="article-date">
+  <time class="dt-published" datetime="2022-05-10T14:59:47.000Z" itemprop="datePublished">2022-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/10/2022-05-11-Day07-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7III/">Day05-每日JS任務-if 流程判斷 III</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h3><h3 id="題目一：有沒有打折"><a href="#題目一：有沒有打折" class="headerlink" title="題目一：有沒有打折"></a>題目一：有沒有打折</h3><p>某廠商大甩賣，折扣表如下：</p>
+<ul>
+<li>未滿 2000 無折扣</li>
+<li>2000~2999 9折</li>
+<li>3000~3999 8折</li>
+<li>高於 4000 7折</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">sale</span>(<span class="params">num</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> num&lt;<span class="number">2000</span>?<span class="attr">num</span>:</span><br><span class="line">    (num&gt;=<span class="number">2000</span> &amp;&amp; num &lt;<span class="number">3000</span>)?<span class="title class_">Math</span>.<span class="title function_">round</span>(num*<span class="number">0.9</span>):</span><br><span class="line">    (num&gt;=<span class="number">3000</span> &amp;&amp; num &lt;<span class="number">4000</span>)?<span class="title class_">Math</span>.<span class="title function_">round</span>(num*<span class="number">0.8</span>):</span><br><span class="line">    (num&gt;=<span class="number">4000</span>)?<span class="title class_">Math</span>.<span class="title function_">round</span>(num*<span class="number">0.7</span>):num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// input 輸入</span></span><br><span class="line"><span class="title function_">sale</span>(<span class="number">5000</span>)</span><br><span class="line"><span class="title function_">sale</span>(<span class="number">2500</span>)</span><br><span class="line"><span class="title function_">sale</span>(<span class="number">3300</span>)</span><br><span class="line"><span class="title function_">sale</span>(<span class="number">200</span>)</span><br><span class="line"><span class="comment">// output 輸出</span></span><br><span class="line"><span class="number">3500</span></span><br><span class="line"><span class="number">2250</span></span><br><span class="line"><span class="number">2640</span></span><br><span class="line"><span class="number">200</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2022/05/10/2022-05-11-Day07-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7III/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2022/05/10/2022-05-11-Day07-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7III/" data-id="cl34mn745000014vgg2rigc10" data-title="Day05-每日JS任務-if 流程判斷 III" class="article-share-link">Teilen</a>
+      
+      
+        <a href="/2022/05/10/2022-05-11-Day07-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7III/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/10/2022-05-11-Day07-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7III/" itemprop="commentCount"></span>
+          Kommentare
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-05-11-Day23-development及production環境變數指令、客製錯誤訊息" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/10/2022-05-11-Day23-development%E5%8F%8Aproduction%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8%E6%8C%87%E4%BB%A4%E3%80%81%E5%AE%A2%E8%A3%BD%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/" class="article-date">
+  <time class="dt-published" datetime="2022-05-10T14:41:13.000Z" itemprop="datePublished">2022-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/10/2022-05-11-Day23-development%E5%8F%8Aproduction%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8%E6%8C%87%E4%BB%A4%E3%80%81%E5%AE%A2%E8%A3%BD%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/">Day23-development 及 production 環境變數指令、客製錯誤訊息</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由於通常不會將開發時遇到的詳細錯誤資訊（如 error.stack）呈現在客戶端，避免過多資訊暴露而有資安疑慮，因此會區分 development 及 production 模式下的錯誤訊息</p>
+<p>可在錯誤處理 (error handler) middleware 判斷 Node.js 環境變數<br><code>process.env.NODE_ENV</code> 為 <code>dev</code> 或是 <code>production</code>（下方 error handler 範例 31 及 33 行），以提供不同錯誤處理</p>
+        
+          <p class="article-more-link">
+            <a href="/2022/05/10/2022-05-11-Day23-development%E5%8F%8Aproduction%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8%E6%8C%87%E4%BB%A4%E3%80%81%E5%AE%A2%E8%A3%BD%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://blog.heitang.info/2022/05/10/2022-05-11-Day23-development%E5%8F%8Aproduction%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8%E6%8C%87%E4%BB%A4%E3%80%81%E5%AE%A2%E8%A3%BD%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/" data-id="cl34mn747000114vg1qx79gey" data-title="Day23-development 及 production 環境變數指令、客製錯誤訊息" class="article-share-link">Teilen</a>
+      
+      
+        <a href="/2022/05/10/2022-05-11-Day23-development%E5%8F%8Aproduction%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8%E6%8C%87%E4%BB%A4%E3%80%81%E5%AE%A2%E8%A3%BD%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/#comments" class="article-comment-link">
+          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/10/2022-05-11-Day23-development%E5%8F%8Aproduction%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8%E6%8C%87%E4%BB%A4%E3%80%81%E5%AE%A2%E8%A3%BD%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/" itemprop="commentCount"></span>
+          Kommentare
+        </a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2022-05-10-Day06-每日JS任務-if流程判斷II" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/10/2022-05-10-Day06-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7II/" class="article-date">
@@ -535,119 +651,11 @@
 
 
   
-    <article id="post-2022-05-06-Day20-HTTP狀態碼" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T18:44:43.000Z" itemprop="datePublished">2022-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/">Day20-HTTP狀態碼</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Server 端通常會在回應時以 HTTP 狀態碼表示 Client 端發出的請求是否已被完成、處理狀態，狀態碼通常會以三個數字呈現，並以開頭第一個數字表示主要的處理狀態</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/" data-id="cl2usp3m9000ehsvg542h7q7z" data-title="Day20-HTTP狀態碼" class="article-share-link">Teilen</a>
-      
-      
-        <a href="/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/07/2022-05-06-Day20-HTTP%E7%8B%80%E6%85%8B%E7%A2%BC/" itemprop="commentCount"></span>
-          Kommentare
-        </a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2022-05-05-Day19-Middleware" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/07/2022-05-05-Day19-Middleware/" class="article-date">
-  <time class="dt-published" datetime="2022-05-06T18:36:03.000Z" itemprop="datePublished">2022-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Node-js/">Node.js</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/07/2022-05-05-Day19-Middleware/">Day19-Middleware</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Express 在收到 request 到回傳 response，中間會經過一系列的 middleware（中間件&#x2F;中介軟體）處理，<br>middleware 本身像是一個守門員的概念，通常會使用 app.use((req, res, next) &#x3D;&gt; {…}) 並帶入 function，function 中除了 req 及 res 參數，還有 next，當執行 next() 就代表要將控制權交給下一個 Middleware<br>需注意若在 Middleware 最後沒有執行 next()，程式就會停留在這個 Middleware，無法進入下一個階段</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/05/07/2022-05-05-Day19-Middleware/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://blog.heitang.info/2022/05/07/2022-05-05-Day19-Middleware/" data-id="cl2usp3mb000hhsvgarsl48ma" data-title="Day19-Middleware" class="article-share-link">Teilen</a>
-      
-      
-        <a href="/2022/05/07/2022-05-05-Day19-Middleware/#comments" class="article-comment-link">
-          <span class="post-comments-count valine-comment-count" data-xid="/2022/05/07/2022-05-05-Day19-Middleware/" itemprop="commentCount"></span>
-          Kommentare
-        </a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/" rel="tag">Express</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -678,7 +686,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Net/" style="font-size: 10px;">.Net</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Express/" style="font-size: 18.33px;">Express</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Honeygain/" style="font-size: 10px;">Honeygain</a> <a href="/tags/JavaScript/" style="font-size: 18.33px;">JavaScript</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/MongoDB/" style="font-size: 16.67px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 15px;">Mongoose</a> <a href="/tags/Node-js/" style="font-size: 18.33px;">Node.js</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Promise/" style="font-size: 11.67px;">Promise</a> <a href="/tags/Schema/" style="font-size: 15px;">Schema</a> <a href="/tags/VSCode/" style="font-size: 10px;">VSCode</a> <a href="/tags/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD/" style="font-size: 10px;">Vue直播班</a> <a href="/tags/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD-2022%E6%98%A5%E5%AD%A3%E7%8F%AD/" style="font-size: 10px;">Vue直播班-2022春季班</a> <a href="/tags/Win10/" style="font-size: 10px;">Win10</a> <a href="/tags/Windows/" style="font-size: 13.33px;">Windows</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/await/" style="font-size: 10px;">await</a> <a href="/tags/delete/" style="font-size: 10px;">delete</a> <a href="/tags/exp/" style="font-size: 10px;">exp</a> <a href="/tags/imp/" style="font-size: 10px;">imp</a> <a href="/tags/insert/" style="font-size: 10px;">insert</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/md/" style="font-size: 10px;">md</a> <a href="/tags/oneptp/" style="font-size: 10px;">oneptp</a> <a href="/tags/otohits-net/" style="font-size: 10px;">otohits.net</a> <a href="/tags/query/" style="font-size: 10px;">query</a> <a href="/tags/update/" style="font-size: 10px;">update</a> <a href="/tags/%E5%85%AD%E8%A7%92%E5%AD%B8%E9%99%A2/" style="font-size: 10px;">六角學院</a> <a href="/tags/%E5%8F%B3%E9%8D%B5%E8%8F%9C%E5%96%AE/" style="font-size: 10px;">右鍵菜單</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" style="font-size: 10px;">工具分享</a> <a href="/tags/%E6%89%B9%E6%AC%A1%E6%AA%94/" style="font-size: 10px;">批次檔</a> <a href="/tags/%E6%8C%87%E4%BB%A4/" style="font-size: 10px;">指令</a> <a href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E4%BA%AB/" style="font-size: 11.67px;">流量分享</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/" style="font-size: 13.33px;">網路賺錢</a> <a href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/" style="font-size: 10px;">資料庫</a> <a href="/tags/%E9%97%9C%E6%A9%9F/" style="font-size: 10px;">關機</a>
+      <a href="/tags/Net/" style="font-size: 10px;">.Net</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Express/" style="font-size: 18.57px;">Express</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Honeygain/" style="font-size: 10px;">Honeygain</a> <a href="/tags/JavaScript/" style="font-size: 17.14px;">JavaScript</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/MongoDB/" style="font-size: 15.71px;">MongoDB</a> <a href="/tags/Mongoose/" style="font-size: 14.29px;">Mongoose</a> <a href="/tags/Node-js/" style="font-size: 18.57px;">Node.js</a> <a href="/tags/Oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Promise/" style="font-size: 11.43px;">Promise</a> <a href="/tags/Schema/" style="font-size: 14.29px;">Schema</a> <a href="/tags/VSCode/" style="font-size: 10px;">VSCode</a> <a href="/tags/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD/" style="font-size: 10px;">Vue直播班</a> <a href="/tags/Vue%E7%9B%B4%E6%92%AD%E7%8F%AD-2022%E6%98%A5%E5%AD%A3%E7%8F%AD/" style="font-size: 10px;">Vue直播班-2022春季班</a> <a href="/tags/Win10/" style="font-size: 10px;">Win10</a> <a href="/tags/Windows/" style="font-size: 12.86px;">Windows</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/await/" style="font-size: 10px;">await</a> <a href="/tags/delete/" style="font-size: 10px;">delete</a> <a href="/tags/exp/" style="font-size: 10px;">exp</a> <a href="/tags/imp/" style="font-size: 10px;">imp</a> <a href="/tags/insert/" style="font-size: 10px;">insert</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/md/" style="font-size: 10px;">md</a> <a href="/tags/oneptp/" style="font-size: 10px;">oneptp</a> <a href="/tags/otohits-net/" style="font-size: 10px;">otohits.net</a> <a href="/tags/query/" style="font-size: 10px;">query</a> <a href="/tags/update/" style="font-size: 10px;">update</a> <a href="/tags/%E5%85%AD%E8%A7%92%E5%AD%B8%E9%99%A2/" style="font-size: 10px;">六角學院</a> <a href="/tags/%E5%8F%B3%E9%8D%B5%E8%8F%9C%E5%96%AE/" style="font-size: 10px;">右鍵菜單</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" style="font-size: 10px;">工具分享</a> <a href="/tags/%E6%89%B9%E6%AC%A1%E6%AA%94/" style="font-size: 10px;">批次檔</a> <a href="/tags/%E6%8C%87%E4%BB%A4/" style="font-size: 10px;">指令</a> <a href="/tags/%E6%B5%81%E9%87%8F%E5%88%86%E4%BA%AB/" style="font-size: 11.43px;">流量分享</a> <a href="/tags/%E7%B6%B2%E8%B7%AF%E8%B3%BA%E9%8C%A2/" style="font-size: 12.86px;">網路賺錢</a> <a href="/tags/%E8%B3%87%E6%96%99%E5%BA%AB/" style="font-size: 10px;">資料庫</a> <a href="/tags/%E9%97%9C%E6%A9%9F/" style="font-size: 10px;">關機</a>
     </div>
   </div>
 
@@ -700,6 +708,14 @@
       <ul>
         
           <li>
+            <a href="/2022/05/10/2022-05-11-Day07-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7III/">Day05-每日JS任務-if 流程判斷 III</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/10/2022-05-11-Day23-development%E5%8F%8Aproduction%E7%92%B0%E5%A2%83%E8%AE%8A%E6%95%B8%E6%8C%87%E4%BB%A4%E3%80%81%E5%AE%A2%E8%A3%BD%E9%8C%AF%E8%AA%A4%E8%A8%8A%E6%81%AF/">Day23-development 及 production 環境變數指令、客製錯誤訊息</a>
+          </li>
+        
+          <li>
             <a href="/2022/05/10/2022-05-10-Day06-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-if%E6%B5%81%E7%A8%8B%E5%88%A4%E6%96%B7II/">Day05-每日JS任務-if 流程判斷 II</a>
           </li>
         
@@ -709,14 +725,6 @@
         
           <li>
             <a href="/2022/05/10/2022-05-05-Day03-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E5%AD%97%E4%B8%B2%E8%A8%AD%E8%A8%88/">Day03-每日JS任務-字串設計</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/10/2022-05-06-Day04-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%AF%94%E8%BC%83%E8%88%87%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90/">Day04-每日JS任務-比較與邏輯運算子</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/10/2022-05-04-Day02-%E6%AF%8F%E6%97%A5JS%E4%BB%BB%E5%8B%99-%E6%95%B8%E5%AD%97%E8%99%95%E7%90%86/">Day02-每日JS任務-數字處理</a>
           </li>
         
       </ul>
