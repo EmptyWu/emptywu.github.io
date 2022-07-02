@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Day14-req.query篩選網址參數
-tags: [Express,Node.js,javascript]
+tags: [Express,Node.js,JavaScript]
 author: EmptyWu
 date: 2022-05-07 01:57:59
 category: Node.js

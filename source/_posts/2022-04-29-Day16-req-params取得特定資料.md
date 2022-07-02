@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Day16-req.params取得特定資料
-tags: [Express,Node.js,javascript]
+tags: [Express,Node.js,JavaScript]
 author: EmptyWu
 date: 2022-05-07 02:06:56
 category: Node.js

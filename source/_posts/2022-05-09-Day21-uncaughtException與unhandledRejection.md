@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Day21-uncaughtException與unhandledRejection
-tags: [Express,Node.js,javascript]
+tags: [Express,Node.js,JavaScript]
 author: EmptyWu
 date: 2022-05-10 20:23:38
 category: Node.js

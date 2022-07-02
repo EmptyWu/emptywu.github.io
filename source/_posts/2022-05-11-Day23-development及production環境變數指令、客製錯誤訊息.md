@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Day23-development 及 production 環境變數指令、客製錯誤訊息
-tags: [Express,Node.js,javascript]
+tags: [Express,Node.js,JavaScript]
 author: EmptyWu
 date: 2022-05-10 22:41:13
 category: Node.js
